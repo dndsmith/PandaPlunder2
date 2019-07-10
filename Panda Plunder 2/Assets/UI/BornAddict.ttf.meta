@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: c85bd5bde2c893640877e581b1f381f1
+timeCreated: 1517733914
+licenseType: Free
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 100
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Born Addict
+  fontNames:
+  - Born Addict
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

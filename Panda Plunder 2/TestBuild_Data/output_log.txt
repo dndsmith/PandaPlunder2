@@ -1,0 +1,46 @@
+Initialize engine version: 5.6.1f1 (2860b30f0b54)
+GfxDevice: creating device client; threaded=1
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.0]
+    Renderer: NVIDIA GeForce GTX 745 (ID=0x1382)
+    Vendor:   NVIDIA
+    VRAM:     3072 MB
+    Driver:   23.21.13.8813
+Begin MonoManager ReloadAssembly
+Platform assembly: \\home.clemson.edu\dnsmith\Desktop\coding4kids-master\coding4kids\Panda Plunder\TestBuild_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading \\home.clemson.edu\dnsmith\Desktop\coding4kids-master\coding4kids\Panda Plunder\TestBuild_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: \\home.clemson.edu\dnsmith\Desktop\coding4kids-master\coding4kids\Panda Plunder\TestBuild_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading \\home.clemson.edu\dnsmith\Desktop\coding4kids-master\coding4kids\Panda Plunder\TestBuild_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: \\home.clemson.edu\dnsmith\Desktop\coding4kids-master\coding4kids\Panda Plunder\TestBuild_Data\Managed\Assembly-UnityScript.dll (this message is harmless)
+Loading \\home.clemson.edu\dnsmith\Desktop\coding4kids-master\coding4kids\Panda Plunder\TestBuild_Data\Managed\Assembly-UnityScript.dll into Unity Child Domain
+Platform assembly: \\home.clemson.edu\dnsmith\Desktop\coding4kids-master\coding4kids\Panda Plunder\TestBuild_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading \\home.clemson.edu\dnsmith\Desktop\coding4kids-master\coding4kids\Panda Plunder\TestBuild_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+Platform assembly: \\home.clemson.edu\dnsmith\Desktop\coding4kids-master\coding4kids\Panda Plunder\TestBuild_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
+Loading \\home.clemson.edu\dnsmith\Desktop\coding4kids-master\coding4kids\Panda Plunder\TestBuild_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
+Platform assembly: \\home.clemson.edu\dnsmith\Desktop\coding4kids-master\coding4kids\Panda Plunder\TestBuild_Data\Managed\UnityEngine.Analytics.dll (this message is harmless)
+Loading \\home.clemson.edu\dnsmith\Desktop\coding4kids-master\coding4kids\Panda Plunder\TestBuild_Data\Managed\UnityEngine.Analytics.dll into Unity Child Domain
+- Completed reload, in  0.920 seconds
+Platform assembly: \\home.clemson.edu\dnsmith\Desktop\coding4kids-master\coding4kids\Panda Plunder\TestBuild_Data\Managed\System.Core.dll (this message is harmless)
+Platform assembly: \\home.clemson.edu\dnsmith\Desktop\coding4kids-master\coding4kids\Panda Plunder\TestBuild_Data\Managed\System.dll (this message is harmless)
+desktop: 3840x2160 30Hz; virtual: 3840x2160 at 0,0
+<RI> Initializing input.
+<RI> Input initialized.
+<RI> Initialized touch support.
+UnloadTime: 55.980385 ms
+Login
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Awake: DataBase (UnityEngine.GameObject)
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Setting up 4 worker threads for Enlighten.
+  Thread -> id: 21a0 -> priority: 1 
+  Thread -> id: 2194 -> priority: 1 
+  Thread -> id: 2180 -> priority: 1 
+  Thread -> id: 219c -> priority: 1 
+failure
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+

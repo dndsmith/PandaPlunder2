@@ -1,0 +1,159 @@
+fileFormatVersion: 2
+guid: 091bf79418e39a94984343549103d41b
+timeCreated: 1517796855
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: group1_bowl1
+    100002: group1_carrot1
+    100004: group1_carrot2
+    100006: group1_carrot3
+    100008: group1_carrot4
+    100010: group1_carrot5
+    100012: group1_carrot6
+    100014: group1_meat1
+    100016: group1_meat3
+    100018: group1_pea1
+    100020: group1_pea2
+    100022: group1_pea3
+    100024: group1_pea4
+    100026: group1_pea5
+    100028: group1_spoon1
+    100030: meat2_group1
+    100032: //RootNode
+    400000: group1_bowl1
+    400002: group1_carrot1
+    400004: group1_carrot2
+    400006: group1_carrot3
+    400008: group1_carrot4
+    400010: group1_carrot5
+    400012: group1_carrot6
+    400014: group1_meat1
+    400016: group1_meat3
+    400018: group1_pea1
+    400020: group1_pea2
+    400022: group1_pea3
+    400024: group1_pea4
+    400026: group1_pea5
+    400028: group1_spoon1
+    400030: meat2_group1
+    400032: //RootNode
+    2300000: group1_bowl1
+    2300002: group1_carrot1
+    2300004: group1_carrot2
+    2300006: group1_carrot3
+    2300008: group1_carrot4
+    2300010: group1_carrot5
+    2300012: group1_carrot6
+    2300014: group1_meat1
+    2300016: group1_meat3
+    2300018: group1_pea1
+    2300020: group1_pea2
+    2300022: group1_pea3
+    2300024: group1_pea4
+    2300026: group1_pea5
+    2300028: group1_spoon1
+    2300030: meat2_group1
+    3300000: group1_bowl1
+    3300002: group1_carrot1
+    3300004: group1_carrot2
+    3300006: group1_carrot3
+    3300008: group1_carrot4
+    3300010: group1_carrot5
+    3300012: group1_carrot6
+    3300014: group1_meat1
+    3300016: group1_meat3
+    3300018: group1_pea1
+    3300020: group1_pea2
+    3300022: group1_pea3
+    3300024: group1_pea4
+    3300026: group1_pea5
+    3300028: group1_spoon1
+    3300030: meat2_group1
+    4300000: group1_bowl1
+    4300002: group1_carrot1
+    4300004: group1_carrot2
+    4300006: group1_carrot3
+    4300008: group1_carrot4
+    4300010: group1_carrot5
+    4300012: group1_carrot6
+    4300014: group1_meat1
+    4300016: group1_meat3
+    4300018: group1_pea1
+    4300020: group1_pea2
+    4300022: group1_pea3
+    4300024: group1_pea4
+    4300026: group1_pea5
+    4300028: group1_spoon1
+    4300030: meat2_group1
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
