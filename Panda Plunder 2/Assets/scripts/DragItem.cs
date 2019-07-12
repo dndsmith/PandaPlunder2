@@ -29,7 +29,7 @@ public class DragItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDrag
             {
                 GoBackToNearestStack();
             }
-            else if (GetComponent<Variable>() != null)
+            else if (GetComponent<VariableHolder>() != null)
             {
                 Destroy(this.gameObject); // variables get destroyed if not dropped in drop zone
             }
@@ -48,9 +48,10 @@ public class DragItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDrag
             if (parentHomeBase != null) parentHomeBase.SetResidentItem(remainingStack.GetComponent<DragItem>());
             inBoundsOfDropZone = true;
         }
-        else if(GetComponent<Variable>() != null)
+        else if(GetComponent<VariableHolder>() != null && !homeBase.IsInventoryBox())
         {
             GameObject remainingVariable = Instantiate(instantiationPrefab, transform.position, Quaternion.identity, GameObject.FindGameObjectWithTag("Canvas").transform);
+            remainingVariable.GetComponent<VariableHolder>().SetVariable(this.GetComponent<VariableHolder>().GetVariable());
             parentHomeBase = homeBase;
             SetHomeBase(null);
             if (parentHomeBase != null) parentHomeBase.SetResidentItem(remainingVariable.GetComponent<DragItem>());
@@ -114,15 +115,16 @@ public class DragItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDrag
 
     public void GoBackToNearestStack()
     {
-        Inventory[] inventories = FindObjectsOfType<Inventory>();
-        inventories[1].Stash(GetComponent<ItemStack>().RemoveAllItems()); // lazy way to get player invntory, i know
+        GameObject playerInventory = GameObject.FindGameObjectWithTag("Player");
+        playerInventory.GetComponent<Inventory>().Stash(GetComponent<ItemStack>().RemoveAllItems());
     }
 
     private void StayAtHomeBase()
     {
         transform.position = homeBase.gameObject.transform.position;
-        RT[0].sizeDelta = new Vector2(Mathf.FloorToInt(0.5f * homeBase.GetComponent<RectTransform>().rect.width), Mathf.FloorToInt(0.5f * homeBase.GetComponent<RectTransform>().rect.height));
-        if(RT.Length > 1)
+        if(homeBase.IsInventoryBox()) RT[0].sizeDelta = new Vector2(Mathf.FloorToInt(0.5f * homeBase.GetComponent<RectTransform>().rect.width), Mathf.FloorToInt(0.5f * homeBase.GetComponent<RectTransform>().rect.height));
+        else RT[0].sizeDelta = new Vector2(Mathf.FloorToInt(0.8f * homeBase.GetComponent<RectTransform>().rect.width), Mathf.FloorToInt(0.8f * homeBase.GetComponent<RectTransform>().rect.height));
+        if (RT.Length > 1)
         {
             for(int i = 1; i < RT.Length; i++)
             {

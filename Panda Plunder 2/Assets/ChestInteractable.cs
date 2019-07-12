@@ -16,6 +16,7 @@ public class ChestInteractable : Interactable
     private BoxCollider top;
     private AssignmentMenu assignmentMenu;
     private Variable chestVariable;
+    private ActivityController activityController;
 
     // vars related to phsical gems in chest
     public string [] gemColors;
@@ -28,8 +29,9 @@ public class ChestInteractable : Interactable
     private void Start()
     {
         assignmentMenu = FindObjectOfType<AssignmentMenu>();
-        assignmentMenu.MenuClosed += c_OnMenuClosed;
+        assignmentMenu.MenuClosed += C_OnMenuClosed;
         chestVariable = GetComponentInChildren<Variable>();
+        activityController = FindObjectOfType<ActivityController>();
         BoxCollider[] colliders = GetComponentsInChildren<BoxCollider>();
         foreach (BoxCollider box in colliders)
         {
@@ -110,6 +112,7 @@ public class ChestInteractable : Interactable
     private void OpenChest()
     {
         HidePrompt();
+        activityController.ShowVariables();
         Animation anim = GetComponentInParent<Animation>();
         anim["ChestAnim"].speed = 3.0f;
         anim.Play("ChestAnim");
@@ -120,6 +123,7 @@ public class ChestInteractable : Interactable
 
     private void CloseChest()
     {
+        activityController.HideVariables();
         Animation anim = GetComponentInParent<Animation>();
         anim["ChestAnim"].speed = -3.0f;
         anim["ChestAnim"].time = anim["ChestAnim"].length;
@@ -149,7 +153,7 @@ public class ChestInteractable : Interactable
         //if(isOpen) Instantiate(toBeSpawned, transform.position + new Vector3(0, 2, 0), Quaternion.identity);
     }
 
-    public void c_OnMenuClosed(object sender, System.EventArgs e)
+    public void C_OnMenuClosed(object sender, System.EventArgs e)
     {
         if(isOpen) CloseChest();
     }

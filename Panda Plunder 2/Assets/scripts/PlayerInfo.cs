@@ -5,6 +5,8 @@ using UnityEngine;
 [System.Serializable]
 public class PlayerInfo
 {
+    //number of levels
+    public static readonly int NUM_LEVELS = 16;
     //name of player
     public string name;
     //password- might not be necessary, but for now we'l take it
@@ -26,7 +28,7 @@ public class PlayerInfo
         levelLock = 0;
         levelData = new List<LevelData>();
         questionData = new List<QuestionData>();
-        for(int i = 0; i < 15; i++)
+        for(int i = 0; i < NUM_LEVELS; i++)
         {
 
             levelData.Add(new LevelData(i));
@@ -112,5 +114,4 @@ public class LevelData
         stars = 0;
         played = false;
     }
-
 }

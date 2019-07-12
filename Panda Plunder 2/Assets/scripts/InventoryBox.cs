@@ -45,6 +45,7 @@ public class InventoryBox : MonoBehaviour
         return residentObject.GetComponent<ItemStack>().AddItems(items);
     }
 
+    // don't ever use with VariableHolder drag item
     public InventoryItem RemoveItem()
     {
         if (residentObject != null && residentObject.GetComponent<ItemStack>() != null)
@@ -60,8 +61,8 @@ public class InventoryBox : MonoBehaviour
         {
             if (residentObject.GetComponent<ItemStack>() != null)
                 return residentObject.GetComponent<ItemStack>().RemoveItems(num);
-            else if (residentObject.GetComponent<Variable>() != null)
-                return residentObject.GetComponent<Variable>().GetValue();
+            else if (residentObject.GetComponent<VariableHolder>() != null)
+                return residentObject.GetComponent<VariableHolder>().GetVariable().GetValue();
             else return null;
         }
         else return null;
@@ -73,8 +74,8 @@ public class InventoryBox : MonoBehaviour
         {
             if (residentObject.GetComponent<ItemStack>() != null)
                 return residentObject.GetComponent<ItemStack>().RemoveAllItems();
-            else if (residentObject.GetComponent<Variable>() != null)
-                return residentObject.GetComponent<Variable>().GetValue();
+            else if (residentObject.GetComponent<VariableHolder>() != null)
+                return residentObject.GetComponent<VariableHolder>().GetVariable().GetValue();
             else return null;
         }
         else return null;
@@ -87,9 +88,8 @@ public class InventoryBox : MonoBehaviour
 
     public void CreateStack()
     {
-        residentObject = Instantiate(itemStackPrefab, this.transform.position, Quaternion.identity, GameObject.FindGameObjectWithTag("Canvas").transform);
-        residentObject.GetComponent<DragItem>().SetHomeBase(DZ);
-        DZ.SetResidentItem(residentObject.GetComponent<DragItem>());
+        SetResident(Instantiate(itemStackPrefab, this.transform.position, Quaternion.identity, GameObject.FindGameObjectWithTag("Canvas").transform));
+        residentObject.GetComponent<DragItem>().DropInZone(DZ);
     }
 
     public string GetItemType()
@@ -98,11 +98,16 @@ public class InventoryBox : MonoBehaviour
         {
             if (residentObject.GetComponent<ItemStack>() != null)
                 return residentObject.GetComponent<ItemStack>().GetItemType();
-            else if (residentObject.GetComponent<Variable>() != null)
-                return residentObject.GetComponent<Variable>().GetItemType();
+            else if (residentObject.GetComponent<VariableHolder>() != null)
+                return residentObject.GetComponent<VariableHolder>().GetItemType();
             else return null;
         }
         else return null;
+    }
+
+    public void DestroyContents()
+    {
+        Destroy(residentObject);
     }
 
     /*

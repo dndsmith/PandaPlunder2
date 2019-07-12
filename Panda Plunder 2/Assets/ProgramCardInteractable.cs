@@ -14,9 +14,7 @@ public class ProgramCardInteractable : Interactable
     public moveScore MS;
     public RawImage image;
     public Texture2D cardPNG;
-
     public moveCharacter MC;
-
     public Collider barrier;
 
     private void Start()

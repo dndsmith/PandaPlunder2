@@ -9,7 +9,7 @@ public class Variable : MonoBehaviour
     List<InventoryItem> values = new List<InventoryItem>();
     public string varName;
     public Sprite varIcon;
-    private string type;
+    private string type = null;
 
     public void Assign(List<InventoryItem> items)
     {

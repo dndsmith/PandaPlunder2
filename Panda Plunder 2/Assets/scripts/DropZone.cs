@@ -62,6 +62,11 @@ public class DropZone : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
         return residentItem != null;
     }
 
+    public void DestroyResident()
+    {
+        Destroy(residentItem.gameObject);
+    }
+
     public void AddItems(InventoryItem[] items)
     {
         ItemStack itemStack = residentItem.gameObject.GetComponent<ItemStack>();
@@ -69,5 +74,10 @@ public class DropZone : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
         {
             itemStack.AddItems(items);
         }
+    }
+
+    public bool IsInventoryBox()
+    {
+        return box != null;
     }
 }

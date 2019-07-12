@@ -41,7 +41,7 @@ public class LevelOut : MonoBehaviour {
         if (endLevel)
         {
 
-            nextLevel = "Menus/LevelSelect"; // should L be capitalized here?
+            nextLevel = "Menus/levelSelect"; // should L be capitalized here?
 
         }
         
