@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ObjectsInBasket : MonoBehaviour
 {
-    public gameScore GS;
+    public GameScore GS;
     private const int placedInBasketScore = 500;
 
     // reacts only to gems placed in basket

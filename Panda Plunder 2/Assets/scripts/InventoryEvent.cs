@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class InventoryEvent : InteractionEvent
+public class InventoryEvent : InteractableEvent
 {
     public InventoryEvent()
     {

@@ -11,6 +11,7 @@ public class MessagePanelController : MonoBehaviour
 
     moveScore MS;
     Text message;
+    Image image;
     Stopwatch stopwatch = new Stopwatch();
 
     // set Singleton
@@ -23,6 +24,7 @@ public class MessagePanelController : MonoBehaviour
     {
         MS = GetComponent<moveScore>();
         message = GetComponentInChildren<Text>();
+        image = GetComponentsInChildren<Image>()[1];
         HideMessage();
     }
 
@@ -33,7 +35,16 @@ public class MessagePanelController : MonoBehaviour
 
     public void DisplayMessage(string memo)
     {
+        image.enabled = false;
         Instance.message.text = memo;
+        Instance.MS.toView = true;
+    }
+
+    public void DisplayMessage(string memo, Sprite sprite)
+    {
+        if (sprite == null) image.enabled = false;
+        Instance.message.text = memo;
+        Instance.image.sprite = sprite;
         Instance.MS.toView = true;
     }
 
@@ -42,7 +53,12 @@ public class MessagePanelController : MonoBehaviour
         Instance.StartCoroutine(Instance.TimedDisplay(memo, time));
     }
 
-    public void HideMessage()
+    public static void DisplayMessage(string memo, Sprite sprite, float time)
+    {
+        Instance.StartCoroutine(Instance.TimedDisplay(memo, sprite, time));
+    }
+
+    static public void HideMessage()
     {
         Instance.MS.toView = false;
     }
@@ -52,6 +68,17 @@ public class MessagePanelController : MonoBehaviour
         DisplayMessage(memo);
         stopwatch.Start();
         while(stopwatch.Elapsed.TotalSeconds < time)
+        {
+            yield return 0;
+        }
+        stopwatch.Reset();
+        HideMessage();
+    }
+    IEnumerator TimedDisplay(string memo, Sprite sprite, float time)
+    {
+        DisplayMessage(memo, sprite);
+        stopwatch.Start();
+        while (stopwatch.Elapsed.TotalSeconds < time)
         {
             yield return 0;
         }

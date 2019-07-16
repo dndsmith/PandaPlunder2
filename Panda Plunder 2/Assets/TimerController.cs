@@ -24,7 +24,7 @@ public class TimerController : Interactable
         }
     }
 
-    public gameScore GS;
+    public GameScore GS;
 
     private moveScore MS;
     private Stopwatch stopWatch;
@@ -40,7 +40,7 @@ public class TimerController : Interactable
         interval = new Interval(0, 0);
     }
 
-    public override void ReceiveEvent(InteractionEvent e)
+    public override void ReceiveEvent(InteractableEvent e)
     {
         if (!e.GetType().Equals(typeof(TimerEvent)))
         {
@@ -53,7 +53,6 @@ public class TimerController : Interactable
             if (te.start_stop && isStopped) StartTimer();
             else if (te.start_stop && !isStopped) StopTimer();
             else if (te.hide) HideTimer();
-            if (te.addPoints) AddPoints();
             //else
         }
     }
@@ -85,6 +84,7 @@ public class TimerController : Interactable
     {
         stopWatch.Stop();
         isStopped = true;
+        AddPoints();
     }
 
     private void ResetTimer()
@@ -104,9 +104,10 @@ public class TimerController : Interactable
         if (MS.toView) MS.toView = false;
     }
 
+    // always 100 * remaining seconds
     private void AddPoints()
     {
-        GS.addScore(10 * (interval.totalSecs - (int)stopWatch.Elapsed.TotalSeconds));
+        GS.addScore(100 * (interval.totalSecs - (int)stopWatch.Elapsed.TotalSeconds));
     }
 
     IEnumerator CountDown()

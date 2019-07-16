@@ -23,7 +23,7 @@ public class ProgramCardInteractable : Interactable
         image.texture = cardPNG;
     }
 
-    public override void ReceiveEvent(InteractionEvent e)
+    public override void ReceiveEvent(InteractableEvent e)
     {
         if(!e.GetType().Equals(typeof(ProgramCardEvent)))
         {
@@ -40,6 +40,7 @@ public class ProgramCardInteractable : Interactable
                     ShowCard();
             }
             else if (pce.inProximity) InProximityReaction();
+            else if (pce.inTriggerStay) ShowPrompt();
             else OutOfProximityReaction();
         }
     }

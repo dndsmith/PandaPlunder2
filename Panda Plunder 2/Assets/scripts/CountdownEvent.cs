@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class CountdownEvent : InteractionEvent
+public class CountdownEvent : InteractableEvent
 {
     public CountdownEvent()
     {

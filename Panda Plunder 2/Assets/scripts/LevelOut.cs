@@ -7,7 +7,7 @@ public class LevelOut : MonoBehaviour {
 
     public EndGame ender;
     public gameData DB;
-    public gameScore GS;
+    public GameScore GS;
     public questionControl QC;
 
     public int returnmod;

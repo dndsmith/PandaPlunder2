@@ -21,7 +21,7 @@ public class CountdownInteractable : Interactable
         MS.toView = false;
     }
 
-    public override void ReceiveEvent(InteractionEvent e)
+    public override void ReceiveEvent(InteractableEvent e)
     {
         if (!e.GetType().Equals(typeof(CountdownEvent)))
         {

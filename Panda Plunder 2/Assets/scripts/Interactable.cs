@@ -29,7 +29,7 @@ public abstract class Interactable : MonoBehaviour
         if (prompt != null) prompt.enabled = false;
     }
 
-    public abstract void ReceiveEvent(InteractionEvent e);
+    public abstract void ReceiveEvent(InteractableEvent e);
     protected abstract void InProximityReaction();
     protected abstract void OutOfProximityReaction();
     protected virtual void ShowPrompt()

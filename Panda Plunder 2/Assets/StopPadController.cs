@@ -10,33 +10,26 @@ using UnityEngine;
 
 public class StopPadController : Interactable
 {
-    public Texture stopMaterial;  // usually  red  color
-    public Texture startMaterial; // usually green color
-    public int minutesForTimer;
-    public int secondsForTimer;
-    public List<ChestInteractable> chests;
-    public CountdownInteractable CDI;
+    public Texture stopColor;  // usually  red  color
+    public Texture startColor; // usually green color
 
     private Renderer m_renderer;
-    private Stopwatch stopWatch;
-    private TimerController TC;
-    private bool isOnPad;
-    private bool gameStarted;
+
+    private ActivityController activityController;
+    private bool gameStarted = false;
 
     private void Start()
     {
-        TC = FindObjectOfType<TimerController>();
-        stopWatch = new Stopwatch();
-        isOnPad = gameStarted = false;
+        activityController = GetComponentInParent<ActivityController>();
         m_renderer = GetComponent<Renderer>();
-        m_renderer.material.SetTexture("_MainTex", startMaterial);
+        m_renderer.material.SetTexture("_MainTex", startColor);
     }
 
-    public override void ReceiveEvent(InteractionEvent e)
+    public override void ReceiveEvent(InteractableEvent e)
     {
         if (!e.GetType().Equals(typeof(StopPadEvent)))
         {
-            // I've got Lackadaisycathro Disease
+            // I've got Lackadaisycathro Disease!
         }
         else
         {
@@ -48,73 +41,22 @@ public class StopPadController : Interactable
 
     protected override void InProximityReaction()
     {
-        isOnPad = true;
-        stopWatch.Reset();
-        StartCoroutine(SwitchActivity());
+        if(gameStarted) // stop the game
+        {
+            m_renderer.material.SetTexture("_MainTex", startColor); // usually green color
+            activityController.ActivityStop();
+        }
+        else // start the game
+        {
+            m_renderer.material.SetTexture("_MainTex", stopColor); // usually red color
+            activityController.ActivityStart();
+
+        }
+        gameStarted = !gameStarted;
     }
 
     protected override void OutOfProximityReaction()
     {
-        isOnPad = false;
-    }
-
-    private void DoSomething()
-    {
-        gameStarted = !gameStarted;
-        if (gameStarted)
-        {
-            TC.ReceiveEvent(new TimerEvent(InteractionEvent.Character.Player, true, true, false, false, minutesForTimer, secondsForTimer));
-            m_renderer.material.SetTexture("_MainTex", stopMaterial); // usually red color
-        }
-        else
-        {
-            m_renderer.material.SetTexture("_MainTex", startMaterial); // usually green color
-            StartCoroutine(TimeOut());
-        }
-    }
-
-    IEnumerator SwitchActivity()
-    {
-        int time;
-        if (!gameStarted)
-        {
-            CDI.ReceiveEvent(new CountdownEvent(true));
-            time = 3;
-        }
-        else
-        {
-            TC.ReceiveEvent(new TimerEvent(InteractionEvent.Character.Player, false, true, false, false, 0, 0));
-            time = 2;
-        }
-        stopWatch.Start();
-        while(stopWatch.Elapsed.Seconds < time && isOnPad)
-        {
-            yield return 0;
-        }
-        stopWatch.Reset();
-        if (isOnPad)
-        {
-            DoSomething();
-        }
-        else
-        {
-            CDI.ReceiveEvent(new CountdownEvent(false));
-        }
-    }
-
-    IEnumerator TimeOut()
-    {
-        stopWatch.Start();
-        while(stopWatch.Elapsed.Seconds < 1)
-        {
-            yield return 0;
-        }
-        stopWatch.Reset();
-        bool win = true;
-        foreach(ChestInteractable c in chests)
-        {
-            win = win && c.ContentsMatch();
-        }
-        TC.ReceiveEvent(new TimerEvent(InteractionEvent.Character.Player, false, false, true, win, 0, 0));
+        // nothing to do here
     }
 }

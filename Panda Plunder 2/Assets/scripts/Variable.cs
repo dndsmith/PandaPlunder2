@@ -32,4 +32,9 @@ public class Variable : MonoBehaviour
     {
         return type;
     }
+
+    public bool ContainsItem(InventoryItem item)
+    {
+        return values.Contains(item);
+    }
 }

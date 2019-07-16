@@ -9,7 +9,7 @@ public class TurkeyInterac : interaction{
     public Text GOtext;
     public Text subtext;
     public moveScore MS;
-    public gameScore GS;
+    public GameScore GS;
     public AudioSource RPAS;
     public AudioClip rpWin;
     public moveCharacter MC;

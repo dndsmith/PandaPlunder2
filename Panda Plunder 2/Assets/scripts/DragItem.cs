@@ -115,7 +115,7 @@ public class DragItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDrag
 
     public void GoBackToNearestStack()
     {
-        GameObject playerInventory = GameObject.FindGameObjectWithTag("Player");
+        GameObject playerInventory = GameObject.FindGameObjectWithTag("PlayerInventory");
         playerInventory.GetComponent<Inventory>().Stash(GetComponent<ItemStack>().RemoveAllItems());
     }
 

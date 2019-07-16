@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class StopPadEvent : InteractionEvent
+public class StopPadEvent : InteractableEvent
 {
     public StopPadEvent()
     {

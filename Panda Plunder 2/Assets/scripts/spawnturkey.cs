@@ -9,7 +9,7 @@ public class spawnturkey : MonoBehaviour {
     public Text GOtext;
     public Text subtext;
     public moveScore MS;
-    public gameScore GS;
+    public GameScore GS;
     public AudioSource RPAS;
     public moveCharacter MC;
     public Animator A;

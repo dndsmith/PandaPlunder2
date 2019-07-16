@@ -3,18 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class gameScore : MonoBehaviour {
-
-
+public class GameScore : MonoBehaviour
+{
     public int score = 0;
     public int showScore = 0;
     public static int scoreTimer;
-    ///public moveScore MS;
-
-	// Use this for initialization
-	void Start () {
-		
-	}
 	
 	// Update is called once per frame
 	void Update () {

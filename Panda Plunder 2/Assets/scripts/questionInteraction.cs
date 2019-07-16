@@ -18,7 +18,7 @@ public class questionInteraction : interaction {
     public questionControl QC;
 
     public Text questionNumber;
-    public gameScore GS;
+    public GameScore GS;
 
     public FourCornersController FCC;
     public StartFourCorners startFourCorners;

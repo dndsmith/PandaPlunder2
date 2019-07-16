@@ -18,7 +18,7 @@ public class GemCarryInteractable : Interactable
         carryPosition = new Vector3(0f, 1f, 0.8f);
     }
 
-    public override void ReceiveEvent(InteractionEvent e)
+    public override void ReceiveEvent(InteractableEvent e)
     {
         // ignore events that are not GemEvents
         if(!e.GetType().Equals(typeof(GemEvent)))
@@ -32,6 +32,7 @@ public class GemCarryInteractable : Interactable
             if (ge.pickup && ge.inProximity) OnPickUp(ge.character);
             else if (ge.drop && ge.inProximity) OnDrop();
             else if (ge.inProximity) InProximityReaction();
+            else if (ge.inTriggerStay) ShowPrompt();
             else OutOfProximityReaction();
         }
     }
@@ -46,10 +47,10 @@ public class GemCarryInteractable : Interactable
         HidePrompt();
     }
 
-    private void OnPickUp(InteractionEvent.Character C)
+    private void OnPickUp(InteractableEvent.Character C)
     {
         GetComponent<Rigidbody>().isKinematic = true; // so object stays in air
-        if (C == InteractionEvent.Character.Player)
+        if (C == InteractableEvent.Character.Player)
         {
             transform.parent = player.transform;
             transform.localPosition = carryPosition;

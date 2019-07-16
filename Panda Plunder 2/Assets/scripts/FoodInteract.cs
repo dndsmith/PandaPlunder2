@@ -7,7 +7,7 @@ public class FoodInteract : interaction {
 
     public int Calories;
     public AudioSource sfx;
-    public gameScore GS;
+    public GameScore GS;
     public sackFill SF;
     public Text nameOfFood;
 

@@ -21,4 +21,9 @@ public class VariableHolder : MonoBehaviour
     {
         return theVariable.GetItemType();
     }
+
+    public bool ContainsItem(InventoryItem item)
+    {
+        return theVariable.ContainsItem(item);
+    }
 }

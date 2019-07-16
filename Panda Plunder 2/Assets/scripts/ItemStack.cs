@@ -165,4 +165,9 @@ public class ItemStack : MonoBehaviour
             item.PrintItem();
         }
     }
+
+    public bool ContainsItem(InventoryItem item)
+    {
+        return stack.Contains(item);
+    }
 }

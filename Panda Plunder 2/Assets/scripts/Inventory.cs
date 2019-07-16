@@ -6,8 +6,10 @@ using System.Collections.Generic;
 public class Inventory : MonoBehaviour
 {
     public InventoryBox[] inventoryBoxes;
+    public GameScore gameScore;
 
-    // 4 versions of Stash...
+    //***************** 4 VERSIONS OF STASH... *****************//
+
     public bool Stash(InventoryItemComponent item)
     {
         if (item == null) return false;
@@ -18,6 +20,7 @@ public class Inventory : MonoBehaviour
             {
                 box.AddItem(item);
                 Destroy(item.gameObject);
+                gameScore.addScore(50); // TEMOROARY????
                 return true;
             }
         }
@@ -28,6 +31,7 @@ public class Inventory : MonoBehaviour
             if (box.AddItem(item))
             {
                 Destroy(item.gameObject);
+                gameScore.addScore(50); // TEMOROARY????
                 return true;
             }
         }
@@ -43,6 +47,7 @@ public class Inventory : MonoBehaviour
             if (item.type.Equals(box.GetItemType()))
             {
                 box.AddItem(item);
+                gameScore.addScore(50); // TEMOROARY????
                 return true;
             }
         }
@@ -52,6 +57,7 @@ public class Inventory : MonoBehaviour
         {
             if (box.AddItem(item))
             {
+                gameScore.addScore(50); // TEMOROARY????
                 return true;
             }
         }
@@ -71,6 +77,7 @@ public class Inventory : MonoBehaviour
                 {
                     Destroy(item.gameObject);
                 }
+                gameScore.addScore(50); // TEMOROARY????
                 return true;
             }
         }
@@ -84,6 +91,7 @@ public class Inventory : MonoBehaviour
                 {
                     Destroy(item.gameObject);
                 }
+                gameScore.addScore(50); // TEMOROARY????
                 return true;
             }
         }
@@ -99,6 +107,7 @@ public class Inventory : MonoBehaviour
             if (items[0].type.Equals(box.GetItemType()))
             {
                 box.AddItems(items);
+                gameScore.addScore(50); // TEMOROARY????
                 return true;
             }
         }
@@ -108,9 +117,34 @@ public class Inventory : MonoBehaviour
         {
             if (box.AddItems(items))
             {
+                gameScore.addScore(50); // TEMOROARY????
                 return true;
             }
         }
         return false;
+    }
+
+
+    // ***************** END OF STASH **************//
+
+    public bool ContainsItem(InventoryItem item)
+    {
+        foreach(InventoryBox box in inventoryBoxes)
+        {
+            if (box.ContainsItem(item)) return true;
+        }
+        return false;
+    }
+
+    public bool ContainsItems(InventoryItem[] items)
+    {
+        if (items == null) return false;
+        bool success = false;
+        foreach(InventoryItem item in items)
+        {
+            success &= ContainsItem(item);
+        }
+        return success;
+
     }
 }

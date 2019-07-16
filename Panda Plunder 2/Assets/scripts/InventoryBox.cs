@@ -9,8 +9,8 @@ using System.Collections.Generic;
 public class InventoryBox : MonoBehaviour
 {
     public GameObject itemStackPrefab;
-    public GameObject residentObject = null; // fix accessibility
-    public DropZone DZ; // fix acessibility
+    private GameObject residentObject = null;
+    private DropZone DZ;
 
     private void Awake()
     {
@@ -108,6 +108,20 @@ public class InventoryBox : MonoBehaviour
     public void DestroyContents()
     {
         Destroy(residentObject);
+    }
+
+    public bool ContainsItem(InventoryItem item)
+    {
+        if (item == null) return false;
+        else if (residentObject != null)
+        {
+            if (residentObject.GetComponent<ItemStack>() != null)
+                return residentObject.GetComponent<ItemStack>().ContainsItem(item);
+            else if (residentObject.GetComponent<VariableHolder>() != null)
+                return residentObject.GetComponent<VariableHolder>().ContainsItem(item);
+            else return false;
+        }
+        else return false;
     }
 
     /*

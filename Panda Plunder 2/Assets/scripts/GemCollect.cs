@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class GemCollect : MonoBehaviour
 {
-    public gameScore GS;
+    public GameScore GS;
     public int timeToCollectNextGem = 75;
     public int pickupScore = 250;
 

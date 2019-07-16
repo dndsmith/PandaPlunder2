@@ -31,7 +31,7 @@ public class ChestInteractable : Interactable
         assignmentMenu = FindObjectOfType<AssignmentMenu>();
         assignmentMenu.MenuClosed += C_OnMenuClosed;
         chestVariable = GetComponentInChildren<Variable>();
-        activityController = FindObjectOfType<ActivityController>();
+        activityController = GetComponentInParent<ActivityController>();
         BoxCollider[] colliders = GetComponentsInChildren<BoxCollider>();
         foreach (BoxCollider box in colliders)
         {
@@ -77,7 +77,7 @@ public class ChestInteractable : Interactable
         return true;
     }
 
-    override public void ReceiveEvent(InteractionEvent e)
+    override public void ReceiveEvent(InteractableEvent e)
     {
         if (!e.GetType().Equals(typeof(ChestEvent)))
         {
@@ -94,7 +94,7 @@ public class ChestInteractable : Interactable
                     OpenChest();
             }
             else if (ce.inProximity) InProximityReaction();
-            else if (ce.trigger_stay) ShowPrompt();
+            else if (ce.inTriggerStay) ShowPrompt();
             else OutOfProximityReaction();
         }
     }
@@ -150,7 +150,11 @@ public class ChestInteractable : Interactable
         while (sw.Elapsed.Seconds < 1)
             yield return 0;
         sw.Stop();
-        //if(isOpen) Instantiate(toBeSpawned, transform.position + new Vector3(0, 2, 0), Quaternion.identity);
+        /*if (isOpen)
+        {
+            foreach(InventoryItem item in chestVariable.GetValue())
+                Instantiate(toBeSpawned, transform.position + new Vector3(0, 2, 0), Quaternion.identity);
+        }*/
     }
 
     public void C_OnMenuClosed(object sender, System.EventArgs e)

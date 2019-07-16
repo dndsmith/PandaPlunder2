@@ -29,37 +29,47 @@ public class PlayerController : MonoBehaviour
 
     // boolean states
     private bool isCarryingObject = false;
-    private bool isDancingOne = false;
-    private bool isDancingTwo = false;
-    private bool isDancingThree = false;
-    private bool isDancingFour = false;
+    //private bool isDancingOne = false;
+    //private bool isDancingTwo = false;
+    //private bool isDancingThree = false;
+    //private bool isDancingFour = false;
+
+    private void Awake()
+    {
+        playerInventory = GameObject.FindGameObjectWithTag("PlayerInventory").GetComponent<Inventory>();
+    }
 
     void Start()
     {
         particles = GetComponentInChildren<ParticleSystem>();
         animator = GetComponentInChildren<Animator>();
-        playerInventory = GetComponentInChildren<Inventory>();
         currentInteractable = null;
         SetComboLevel(0);
     }
 
     private void Update()
     {
-        // player interacts with something
-        if(Input.GetKeyDown(KeyCode.E))
+        // // INTERACTIONS USING E button
+        if (Input.GetKeyDown(KeyCode.Space))
         {
             if(currentInteractable != null)
             {
-                InteractionEvent e;
+                InteractableEvent e;
                 if (currentInteractable.CompareTag("Gem"))
                 {
-                    e = new GemEvent(InteractionEvent.Character.Player, true, !isCarryingObject, isCarryingObject, 0);
-                    isCarryingObject = !isCarryingObject;
+                    //e = new GemEvent(InteractableEvent.Character.Player, true, !isCarryingObject, isCarryingObject, 0);
+                    //isCarryingObject = !isCarryingObject;
+                    e = new GemEvent(InteractableEvent.Character.Player, false, false, false, false, 0); // out of proximity to remove prompt
+                    currentInteractable.ReceiveEvent(e);
+                    InventoryItemComponent item = currentInteractable.gameObject.GetComponent<InventoryItemComponent>();
+                    playerInventory.Stash(item);
                 }
                 else if (currentInteractable.CompareTag("Chest"))
-                    e = new ChestEvent(InteractionEvent.Character.Player, true, true, false, false, false);
+                    e = new ChestEvent(InteractableEvent.Character.Player, true, false, true);
                 else if (currentInteractable.CompareTag("ProgramCard"))
-                    e = new ProgramCardEvent(InteractionEvent.Character.Player, false, true);
+                    e = new ProgramCardEvent(InteractableEvent.Character.Player, true, false, true);
+                else if (currentInteractable.CompareTag("Door"))
+                    e = new DoorEvent(InteractableEvent.Character.Player, true, false, true);
                 else e = new GemEvent();
                 currentInteractable.ReceiveEvent(e);
             }
@@ -71,19 +81,20 @@ public class PlayerController : MonoBehaviour
             isCarryingObject = !isCarryingObject;
         }
 
+        /* INTERACTIONS USING SPACE BAR
         else if(Input.GetKeyDown(KeyCode.Space))
         {
             if(currentInteractable != null)
             {
                 if(currentInteractable.CompareTag("Gem"))
                 {
-                    GemEvent ge = new GemEvent(InteractionEvent.Character.Player, false, false, false, 0); // out of proximity to remove prompt
+                    GemEvent ge = new GemEvent(InteractableEvent.Character.Player, false, false, false, 0); // out of proximity to remove prompt
                     currentInteractable.ReceiveEvent(ge);
                     InventoryItemComponent item = currentInteractable.gameObject.GetComponent<InventoryItemComponent>();
                     playerInventory.Stash(item);
                 }
             }
-        }
+        }*/
 
         // The four dances
         else if(Input.GetKeyDown(KeyCode.Alpha1))
@@ -116,29 +127,30 @@ public class PlayerController : MonoBehaviour
     // creates an in-proximity event
     private void OnTriggerEnter(Collider other)
     {
-        if (interactables.Contains(other.GetComponentInChildren<Interactable>()) || interactables.Contains(other.GetComponentInParent<Interactable>()))
+        Interactable I;
+        if (interactables.Contains(other.GetComponentInChildren<Interactable>())) // look for interactable in children of collided object
+            I = other.GetComponentInChildren<Interactable>();
+        else if (interactables.Contains(other.GetComponentInParent<Interactable>())) // look for interactable in parent of collided object
+            I = other.GetComponentInParent<Interactable>();
+        else
+            return; // exit if there is no interactable
+
+        if(currentInteractable == null)
         {
-            if(currentInteractable == null)
-            {
-                Interactable I = other.GetComponentInChildren<Interactable>();
-                if (I == null) I = other.GetComponentInParent<Interactable>();
-                InteractionEvent e;
-                if (I.CompareTag("Gem")) e = new GemEvent(InteractionEvent.Character.Player, true, false, false, 0);
-                else if (I.CompareTag("Chest")) e = new ChestEvent(InteractionEvent.Character.Player, true, false, false, false, false);
-                else if (I.CompareTag("StopPad")) e = new StopPadEvent(InteractionEvent.Character.Player, true);
-                else if (I.CompareTag("ProgramCard")) e = new ProgramCardEvent(InteractionEvent.Character.Player, true, false);
-                else e = new GemEvent();
-                I.ReceiveEvent(e);
-            }
-            else
-            {
-                Interactable I = other.GetComponentInChildren<Interactable>();
-                if (I == null) I = other.GetComponentInParent<Interactable>();
-                if (I.CompareTag("StopPad") && !currentInteractable.CompareTag("StopPad")) Debug.Log("Plz put down " + currentInteractable.tag + " to stop activity");
-            }
+            InteractableEvent e;
+            if (I.CompareTag("Gem")) e = new GemEvent(InteractableEvent.Character.Player, true, false, false, false, 0);
+            else if (I.CompareTag("Chest")) e = new ChestEvent(InteractableEvent.Character.Player, true, false, false);
+            else if (I.CompareTag("StopPad")) e = new StopPadEvent(InteractableEvent.Character.Player, true);
+            else if (I.CompareTag("ProgramCard")) e = new ProgramCardEvent(InteractableEvent.Character.Player, true, false, false);
+            else if (I.CompareTag("Door")) e = new DoorEvent(InteractableEvent.Character.Player, true, false, false);
+            else e = new GemEvent();
+            I.ReceiveEvent(e);
         }
+        else
+            if (I.CompareTag("StopPad") && !currentInteractable.CompareTag("StopPad")) MessagePanelController.DisplayMessage("plz put down the object to stop timer", 3f);
     }
 
+    // if stay inside trigger, then this is the current interactable
     private void OnTriggerStay(Collider other)
     {
         if (other.CompareTag("StopPad")) { }//don't interact with stop pad
@@ -149,44 +161,53 @@ public class PlayerController : MonoBehaviour
                 currentInteractable = other.GetComponentInChildren<Interactable>();
                 if (currentInteractable == null) currentInteractable = other.GetComponentInParent<Interactable>();
             }
-            if (other.CompareTag("Chest")) currentInteractable.ReceiveEvent(new ChestEvent(InteractionEvent.Character.Player, false, false, false, false, true));
+            if (other.CompareTag("Gem")) currentInteractable.ReceiveEvent(new GemEvent(InteractableEvent.Character.Player, false, true, false, false, 0));
+            else if (other.CompareTag("Chest")) currentInteractable.ReceiveEvent(new ChestEvent(InteractableEvent.Character.Player, false, true, false));
+            else if (other.CompareTag("ProgramCard")) currentInteractable.ReceiveEvent(new ProgramCardEvent(InteractableEvent.Character.Player, false, true, false));
+            else if (other.CompareTag("Door")) currentInteractable.ReceiveEvent(new DoorEvent(InteractableEvent.Character.Player, false, true, false));
         }
     }
 
     // creates an out-of-proximity event
     private void OnTriggerExit(Collider other)
     {
-        if (interactables.Contains(other.GetComponentInChildren<Interactable>()) || interactables.Contains(other.GetComponentInParent<Interactable>()))
-        {
-            if (currentInteractable != null)
-            {
-                Interactable I = other.GetComponentInChildren<Interactable>();
-                if (I == null) I = other.GetComponentInParent<Interactable>();
-                if (currentInteractable.Equals(I))
-                {
-                    // Damage control: if carrying an object, put it down
-                    if (isCarryingObject)
-                    {
-                        currentInteractable.ReceiveEvent(new GemEvent(InteractionEvent.Character.Player, true, false, true, 0));
-                        isCarryingObject = !isCarryingObject;
-                    }
-                    currentInteractable = null;
-                }
-                InteractionEvent e;
-                // note that the if and else statements create the same GemEvent
-                if (I.CompareTag("Gem")) e = new GemEvent(InteractionEvent.Character.Player, false, false, false, 0);
-                else if (I.CompareTag("Chest")) e = new ChestEvent(InteractionEvent.Character.Player, false, false, false, false, false);
-                else if (I.CompareTag("ProgramCard")) e = new ProgramCardEvent(InteractionEvent.Character.Player, false, false);
-                else e = new GemEvent();
-                I.ReceiveEvent(e);
-            }
-            if (other.CompareTag("StopPad"))
-            {
-                Interactable I = other.GetComponentInChildren<Interactable>();
-                StopPadEvent spe = new StopPadEvent(InteractionEvent.Character.Player, false);
-                I.ReceiveEvent(spe);
+        Interactable I;
+        if (interactables.Contains(other.GetComponentInChildren<Interactable>())) // look for interactable in children of collided object
+            I = other.GetComponentInChildren<Interactable>();
+        else if (interactables.Contains(other.GetComponentInParent<Interactable>())) // look for interactable in parent of collided object
+            I = other.GetComponentInParent<Interactable>();
+        else
+            return; // exit if there is no interactable
 
+        // if currently interacting with something...
+        if (currentInteractable != null)
+        {
+            // ...and if that thing we are interacting with is the collided object
+            if (currentInteractable.Equals(I))
+            {
+                // Damage control: if carrying an object, put it down
+                if (isCarryingObject)
+                {
+                    currentInteractable.ReceiveEvent(new GemEvent(InteractableEvent.Character.Player, true, false, false, true, 0));
+                    isCarryingObject = !isCarryingObject;
+                }
+                currentInteractable = null;
             }
+            InteractableEvent e;
+            // note that the if and else statements create the same GemEvent
+            if (I.CompareTag("Gem")) e = new GemEvent(InteractableEvent.Character.Player, false, false, false, false, 0);
+            else if (I.CompareTag("Chest")) e = new ChestEvent(InteractableEvent.Character.Player, false, false, false);
+            else if (I.CompareTag("ProgramCard")) e = new ProgramCardEvent(InteractableEvent.Character.Player, false, false, false);
+            else if (I.CompareTag("Door")) e = new DoorEvent(InteractableEvent.Character.Player, false, false, false);
+            else e = new GemEvent();
+            I.ReceiveEvent(e);
+        }
+
+        // special case for stop pad since it is not allowed to be currentInteractable
+        if (other.CompareTag("StopPad"))
+        {
+            StopPadEvent spe = new StopPadEvent(InteractableEvent.Character.Player, false);
+            I.ReceiveEvent(spe);
         }
     }
 
@@ -237,37 +258,37 @@ public class PlayerController : MonoBehaviour
     // The dancing functions function as on/off switches
     private void SwitchDanceOne()
     {
-        if (isDancingTwo) SwitchDanceTwo();
-        if (isDancingThree) SwitchDanceThree();
-        if (isDancingFour) SwitchDanceFour();
-        isDancingOne = !isDancingOne;
-        animator.SetBool("danceOne", isDancingOne);
+        //if (isDancingTwo) SwitchDanceTwo();
+        //if (isDancingThree) SwitchDanceThree();
+        //if (isDancingFour) SwitchDanceFour();
+        //isDancingOne = !isDancingOne;
+        animator.SetTrigger("danceOne");
     }
 
     private void SwitchDanceTwo()
     {
-        if (isDancingOne) SwitchDanceOne();
-        if (isDancingThree) SwitchDanceThree();
-        if (isDancingFour) SwitchDanceFour();
-        isDancingTwo = !isDancingTwo;
-        animator.SetBool("danceTwo", isDancingTwo);
+        //if (isDancingOne) SwitchDanceOne();
+        //if (isDancingThree) SwitchDanceThree();
+        //if (isDancingFour) SwitchDanceFour();
+        //isDancingTwo = !isDancingTwo;
+        animator.SetTrigger("danceTwo");
     }
 
     private void SwitchDanceThree()
     {
-        if (isDancingOne) SwitchDanceOne();
-        if (isDancingTwo) SwitchDanceTwo();
-        if (isDancingFour) SwitchDanceFour();
-        isDancingThree = !isDancingThree;
-        animator.SetBool("danceThree", isDancingThree);
+        //if (isDancingOne) SwitchDanceOne();
+        //if (isDancingTwo) SwitchDanceTwo();
+        //if (isDancingFour) SwitchDanceFour();
+        //isDancingThree = !isDancingThree;
+        animator.SetTrigger("danceThree");
     }
 
     private void SwitchDanceFour()
     {
-        if (isDancingOne) SwitchDanceOne();
-        if (isDancingTwo) SwitchDanceTwo();
-        if (isDancingThree) SwitchDanceThree();
-        isDancingFour = !isDancingFour;
-        animator.SetBool("danceFour", isDancingFour);
+        //if (isDancingOne) SwitchDanceOne();
+        //if (isDancingTwo) SwitchDanceTwo();
+        //if (isDancingThree) SwitchDanceThree();
+        //isDancingFour = !isDancingFour;
+        animator.SetTrigger("danceFour");
     }
 }
