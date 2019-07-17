@@ -51,7 +51,7 @@ public class FlashCardActivity : ActivityController
         if (choice == correctColorAnswer)
         {
             scoreToAdd = correctBonus;
-            MessagePanelController.DisplayMessage(RandomMessageGenerator.GenerateRandomMessage(goodJob), 3f);
+            MessagePanelController.DisplayMessage(RandomMessageGenerator.GenerateRandomMessage(goodJob), 5f);
         }
     }
 }

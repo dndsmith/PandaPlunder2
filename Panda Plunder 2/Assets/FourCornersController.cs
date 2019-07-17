@@ -144,25 +144,25 @@ public class FourCornersController : Interactable
         color = color.ToLower();
         if(color == "red" && !highBeams[0])
         {
-            colorLights[0].intensity = 10f;
+            colorLights[0].intensity = 3000f;
             colorLights[0].range = 10f;
             highBeams[0] = true;
         }
         else if(color == "yellow" && !highBeams[1])
         {
-            colorLights[1].intensity = 10f;
+            colorLights[1].intensity = 3000f;
             colorLights[1].range = 10f;
             highBeams[1] = true;
         }
         else if (color == "green" && !highBeams[2])
         {
-            colorLights[2].intensity = 10f;
+            colorLights[2].intensity = 3000f;
             colorLights[2].range = 10f;
             highBeams[2] = true;
         }
         else if (color == "blue" && !highBeams[3])
         {
-            colorLights[3].intensity = 10f;
+            colorLights[3].intensity = 3000f;
             colorLights[3].range = 10f;
             highBeams[3] = true;
         }

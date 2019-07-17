@@ -67,6 +67,11 @@ public class MessagePanelController : MonoBehaviour
     {
         DisplayMessage(memo);
         stopwatch.Start();
+        if(stopwatch.Elapsed.TotalSeconds > 0)
+        {
+            stopwatch.Reset();
+            stopwatch.Start();
+        }
         while(stopwatch.Elapsed.TotalSeconds < time)
         {
             yield return 0;
@@ -78,6 +83,11 @@ public class MessagePanelController : MonoBehaviour
     {
         DisplayMessage(memo, sprite);
         stopwatch.Start();
+        if (stopwatch.Elapsed.TotalSeconds > 0)
+        {
+            stopwatch.Reset();
+            stopwatch.Start();
+        }
         while (stopwatch.Elapsed.TotalSeconds < time)
         {
             yield return 0;

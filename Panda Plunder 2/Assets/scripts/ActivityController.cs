@@ -25,11 +25,13 @@ public abstract class ActivityController : MonoBehaviour
         "Done well, you have",
     };
 
-
+    // end level
+    protected EndLevel endLevel;
 
     void Awake()
     {
         timer = FindObjectOfType<TimerController>();
+        endLevel = FindObjectOfType<EndLevel>();
     }
 
     public virtual void StartActivity()
@@ -45,6 +47,7 @@ public abstract class ActivityController : MonoBehaviour
 
     public virtual void DestroyActivity()
     {
+        endLevel.ActivityCompleted();
         Destroy(gameObject);
     }
 
@@ -52,7 +55,7 @@ public abstract class ActivityController : MonoBehaviour
     {
         System.Diagnostics.Stopwatch SW = new System.Diagnostics.Stopwatch();
         SW.Start();
-        while(SW.Elapsed.TotalSeconds < 2) // wait a couple seconds before hiding timer
+        while(SW.Elapsed.TotalSeconds < 3) // wait a 3 seconds before hiding timer
         {
             yield return 0;
         }

@@ -15,7 +15,7 @@ public class MainMenuRandomMessage : MonoBehaviour
         "New and Imporved!",
     };
 
-    void Start()
+    void Awake()
     {
         message = GetComponent<Text>();
         message.text = RandomMessageGenerator.GenerateRandomMessage(randomMessages);
