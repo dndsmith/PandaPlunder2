@@ -84,7 +84,6 @@ public class TimerController : Interactable
     {
         stopWatch.Stop();
         isStopped = true;
-        AddPoints();
     }
 
     private void ResetTimer()
@@ -101,6 +100,7 @@ public class TimerController : Interactable
     private void HideTimer()
     {
         if (!isStopped) StopTimer();
+        AddPoints();
         if (MS.toView) MS.toView = false;
     }
 

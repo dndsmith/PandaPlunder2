@@ -2,17 +2,65 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FourCornersController : MonoBehaviour
+public class FourCornersController : Interactable
 {
     // Lights are in order Red, Yellow, Green, Blue
     // ................(forward, left, right, backward)
     private Light [] colorLights;
     private bool[] highBeams = new bool[4];
 
+    private BoxCollider[] colliders;
+    private FlashCardActivity flashCardActivity;
+    private bool gameStarted;
+
     void Start()
     {
         colorLights = GetComponentsInChildren<Light>();
+        flashCardActivity = GetComponentInParent<FlashCardActivity>();
+        colliders = GetComponentsInChildren<BoxCollider>();
+        for (int i = 1; i < colliders.Length; i++)
+        {
+            colliders[i].enabled = false;
+        }
         DisableLights();
+    }
+
+    public override void ReceiveEvent(InteractableEvent e)
+    {
+        if(!e.GetType().Equals(typeof(FourCornersEvent)))
+        {
+            // nada
+        }
+        else
+        {
+            FourCornersEvent fce = (FourCornersEvent)e;
+            if (fce.inProximity && !gameStarted) InProximityReaction();
+            if (fce.start && !gameStarted) BeginFourCorners();
+            else if (fce.inTriggerStay && !gameStarted) ShowPrompt();
+            else OutOfProximityReaction();
+        }
+    }
+
+    protected override void InProximityReaction()
+    {
+        ShowPrompt();
+    }
+
+    protected override void OutOfProximityReaction()
+    {
+        HidePrompt();
+    }
+
+    public void BeginFourCorners()
+    {
+        EnableLights();
+        foreach (BoxCollider bc in colliders)
+        {
+            bc.enabled = true;
+        }
+        gameStarted = true;
+        flashCardActivity.StartActivity();
+        HidePrompt();
     }
 
     // what if we did a coroutine so the lights come on one at a time?
@@ -30,6 +78,7 @@ public class FourCornersController : MonoBehaviour
         DisableOneLight("yellow");
         DisableOneLight("green");
         DisableOneLight("blue");
+        if (gameStarted) flashCardActivity.StopActivity();
     }
 
     public void EnableOneLight(string color)

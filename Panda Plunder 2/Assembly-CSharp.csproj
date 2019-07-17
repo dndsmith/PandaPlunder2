@@ -148,6 +148,7 @@
     <Compile Include="Assets\QDoorControl.cs" />
     <Compile Include="Assets\scripts\ActivityController.cs" />
     <Compile Include="Assets\scripts\animationHandler.cs" />
+    <Compile Include="Assets\scripts\AssignmentActivity.cs" />
     <Compile Include="Assets\scripts\AssignmentMenu.cs" />
     <Compile Include="Assets\scripts\AssignMenu.cs" />
     <Compile Include="Assets\scripts\BagFill.cs" />
@@ -155,6 +156,7 @@
     <Compile Include="Assets\scripts\CarriableObject.cs" />
     <Compile Include="Assets\scripts\ChangeImage.cs" />
     <Compile Include="Assets\scripts\ChestEvent.cs" />
+    <Compile Include="Assets\scripts\CommandActivity.cs" />
     <Compile Include="Assets\scripts\CountdownEvent.cs" />
     <Compile Include="Assets\scripts\creditsSwitch.cs" />
     <Compile Include="Assets\scripts\cribRock.cs" />
@@ -165,8 +167,10 @@
     <Compile Include="Assets\scripts\DropZone.cs" />
     <Compile Include="Assets\scripts\EndGame.cs" />
     <Compile Include="Assets\scripts\ExitDoor.cs" />
+    <Compile Include="Assets\scripts\FlashCardActivity.cs" />
     <Compile Include="Assets\scripts\followObject.cs" />
     <Compile Include="Assets\scripts\FoodInteract.cs" />
+    <Compile Include="Assets\scripts\FourCornersEvent.cs" />
     <Compile Include="Assets\scripts\gameData.cs" />
     <Compile Include="Assets\scripts\gameOverControl.cs" />
     <Compile Include="Assets\scripts\gameOverScreen.cs" />
@@ -188,6 +192,7 @@
     <Compile Include="Assets\scripts\LightSwitch.cs" />
     <Compile Include="Assets\scripts\LoadingBar.cs" />
     <Compile Include="Assets\scripts\LoadingMenuHandler.cs" />
+    <Compile Include="Assets\scripts\MainMenuRandomMessage.cs" />
     <Compile Include="Assets\scripts\MakeGlow.cs" />
     <Compile Include="Assets\scripts\MenuHandler.cs" />
     <Compile Include="Assets\scripts\Move2DElement.cs" />

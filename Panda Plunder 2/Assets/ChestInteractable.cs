@@ -16,7 +16,7 @@ public class ChestInteractable : Interactable
     private BoxCollider top;
     private AssignmentMenu assignmentMenu;
     private Variable chestVariable;
-    private ActivityController activityController;
+    private AssignmentActivity assignmentActivity;
 
     // vars related to phsical gems in chest
     public string [] gemColors;
@@ -31,7 +31,7 @@ public class ChestInteractable : Interactable
         assignmentMenu = FindObjectOfType<AssignmentMenu>();
         assignmentMenu.MenuClosed += C_OnMenuClosed;
         chestVariable = GetComponentInChildren<Variable>();
-        activityController = GetComponentInParent<ActivityController>();
+        assignmentActivity = GetComponentInParent<AssignmentActivity>();
         BoxCollider[] colliders = GetComponentsInChildren<BoxCollider>();
         foreach (BoxCollider box in colliders)
         {
@@ -112,7 +112,7 @@ public class ChestInteractable : Interactable
     private void OpenChest()
     {
         HidePrompt();
-        activityController.ShowVariables();
+        assignmentActivity.ShowVariables();
         Animation anim = GetComponentInParent<Animation>();
         anim["ChestAnim"].speed = 3.0f;
         anim.Play("ChestAnim");
@@ -123,7 +123,7 @@ public class ChestInteractable : Interactable
 
     private void CloseChest()
     {
-        activityController.HideVariables();
+        assignmentActivity.HideVariables();
         Animation anim = GetComponentInParent<Animation>();
         anim["ChestAnim"].speed = -3.0f;
         anim["ChestAnim"].time = anim["ChestAnim"].length;

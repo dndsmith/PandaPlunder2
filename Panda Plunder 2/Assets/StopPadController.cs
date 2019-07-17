@@ -15,12 +15,12 @@ public class StopPadController : Interactable
 
     private Renderer m_renderer;
 
-    private ActivityController activityController;
+    private AssignmentActivity assignmentActivity;
     private bool gameStarted = false;
 
     private void Start()
     {
-        activityController = GetComponentInParent<ActivityController>();
+        assignmentActivity = GetComponentInParent<AssignmentActivity>();
         m_renderer = GetComponent<Renderer>();
         m_renderer.material.SetTexture("_MainTex", startColor);
     }
@@ -44,12 +44,12 @@ public class StopPadController : Interactable
         if(gameStarted) // stop the game
         {
             m_renderer.material.SetTexture("_MainTex", startColor); // usually green color
-            activityController.ActivityStop();
+            assignmentActivity.StopActivity();
         }
         else // start the game
         {
             m_renderer.material.SetTexture("_MainTex", stopColor); // usually red color
-            activityController.ActivityStart();
+            assignmentActivity.StartActivity();
 
         }
         gameStarted = !gameStarted;

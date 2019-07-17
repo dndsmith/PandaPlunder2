@@ -70,6 +70,8 @@ public class PlayerController : MonoBehaviour
                     e = new ProgramCardEvent(InteractableEvent.Character.Player, true, false, true);
                 else if (currentInteractable.CompareTag("Door"))
                     e = new DoorEvent(InteractableEvent.Character.Player, true, false, true);
+                else if (currentInteractable.CompareTag("FourCorners"))
+                    e = new FourCornersEvent(InteractableEvent.Character.Player, true, false, true);
                 else e = new GemEvent();
                 currentInteractable.ReceiveEvent(e);
             }
@@ -143,6 +145,7 @@ public class PlayerController : MonoBehaviour
             else if (I.CompareTag("StopPad")) e = new StopPadEvent(InteractableEvent.Character.Player, true);
             else if (I.CompareTag("ProgramCard")) e = new ProgramCardEvent(InteractableEvent.Character.Player, true, false, false);
             else if (I.CompareTag("Door")) e = new DoorEvent(InteractableEvent.Character.Player, true, false, false);
+            else if (I.CompareTag("FourCorners")) e = new FourCornersEvent(InteractableEvent.Character.Player, true, false, false);
             else e = new GemEvent();
             I.ReceiveEvent(e);
         }
@@ -165,6 +168,7 @@ public class PlayerController : MonoBehaviour
             else if (other.CompareTag("Chest")) currentInteractable.ReceiveEvent(new ChestEvent(InteractableEvent.Character.Player, false, true, false));
             else if (other.CompareTag("ProgramCard")) currentInteractable.ReceiveEvent(new ProgramCardEvent(InteractableEvent.Character.Player, false, true, false));
             else if (other.CompareTag("Door")) currentInteractable.ReceiveEvent(new DoorEvent(InteractableEvent.Character.Player, false, true, false));
+            else if (other.CompareTag("FourCorners")) currentInteractable.ReceiveEvent(new FourCornersEvent(InteractableEvent.Character.Player, false, true, false));
         }
     }
 
@@ -199,6 +203,7 @@ public class PlayerController : MonoBehaviour
             else if (I.CompareTag("Chest")) e = new ChestEvent(InteractableEvent.Character.Player, false, false, false);
             else if (I.CompareTag("ProgramCard")) e = new ProgramCardEvent(InteractableEvent.Character.Player, false, false, false);
             else if (I.CompareTag("Door")) e = new DoorEvent(InteractableEvent.Character.Player, false, false, false);
+            else if (I.CompareTag("FourCorners")) e = new FourCornersEvent(InteractableEvent.Character.Player, false, false, false);
             else e = new GemEvent();
             I.ReceiveEvent(e);
         }

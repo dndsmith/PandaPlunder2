@@ -5,7 +5,12 @@ using UnityEngine;
 public class FourCornersHighBeams : MonoBehaviour
 {
     public string color;
-    public FourCornersController FCC;
+    private FourCornersController FCC;
+
+    private void Start()
+    {
+        FCC = GetComponentInParent<FourCornersController>();
+    }
 
     private void OnTriggerEnter(Collider other)
     {
