@@ -8,6 +8,8 @@ public class AssignmentMenu : MonoBehaviour
     public event EventHandler<EventArgs> MenuOpened; // event fires when the menu is opened
     public event EventHandler<EventArgs> MenuClosed; // event fires when the menu is closed
 
+    public Text variableName;
+
     private Inventory inventory;
     private moveScore[] moves;
     private Variable variable;
@@ -47,6 +49,7 @@ public class AssignmentMenu : MonoBehaviour
     public void SetVariable(Variable V)
     {
         variable = V;
+        variableName.text = variable.varName;
         GetComponentsInChildren<Image>()[1].sprite = variable.varIcon;
     }
 

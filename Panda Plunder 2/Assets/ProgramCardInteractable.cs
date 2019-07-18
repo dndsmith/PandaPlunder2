@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-// REMOVE MOVECHARACTER AND GAMEOBJECT
 // TRY LOWERING LIGHTS?
 
 public class ProgramCardInteractable : Interactable
@@ -12,15 +11,13 @@ public class ProgramCardInteractable : Interactable
     private bool isBeingViewed = false;
 
     public moveScore MS;
-    public RawImage image;
-    public Texture2D cardPNG;
+    public Sprite programCard;
     public moveCharacter MC;
-    public Collider barrier;
+    public GameObject barrier;
 
     private void Start()
     {
         MS.toView = false;
-        image.texture = cardPNG;
     }
 
     public override void ReceiveEvent(InteractableEvent e)
@@ -39,8 +36,8 @@ public class ProgramCardInteractable : Interactable
                 else
                     ShowCard();
             }
-            else if (pce.inProximity) InProximityReaction();
-            else if (pce.inTriggerStay) ShowPrompt();
+            else if (pce.inProximity && !isBeingViewed) InProximityReaction();
+            else if (pce.inTriggerStay && !isBeingViewed) ShowPrompt();
             else OutOfProximityReaction();
         }
     }
@@ -58,6 +55,7 @@ public class ProgramCardInteractable : Interactable
     private void ShowCard()
     {
         if (isBeingViewed) return;
+        MS.gameObject.GetComponent<Image>().sprite = programCard;
         HidePrompt();
         MS.toView = isBeingViewed = true;
         MC.enabled = false;
@@ -68,6 +66,11 @@ public class ProgramCardInteractable : Interactable
         if (!isBeingViewed) return;
         MS.toView = isBeingViewed = false;
         MC.enabled = true;
-        barrier.enabled = false;
+        if (barrier != null) Destroy(barrier);
+    }
+
+    public void PlayerExitedCardGUI()
+    {
+        HideCard();
     }
 }

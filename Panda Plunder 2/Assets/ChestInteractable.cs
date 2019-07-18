@@ -25,6 +25,7 @@ public class ChestInteractable : Interactable
 
     // boolean states
     private bool isOpen = false;
+    private bool activityStarted = false;
 
     private void Start()
     {
@@ -32,6 +33,7 @@ public class ChestInteractable : Interactable
         assignmentMenu.MenuClosed += C_OnMenuClosed;
         chestVariable = GetComponentInChildren<Variable>();
         assignmentActivity = GetComponentInParent<AssignmentActivity>();
+        assignmentActivity.ActivityStarted += C_OnActivityStarted;
         BoxCollider[] colliders = GetComponentsInChildren<BoxCollider>();
         foreach (BoxCollider box in colliders)
         {
@@ -82,6 +84,10 @@ public class ChestInteractable : Interactable
         if (!e.GetType().Equals(typeof(ChestEvent)))
         {
             // mouse trap. ya roll your dice, ya move your mice. nobody gets hurt
+        }
+        else if (!activityStarted)
+        {
+            MessagePanelController.DisplayMessage("you must step on the octagon first", 2f);
         }
         else
         {
@@ -160,5 +166,10 @@ public class ChestInteractable : Interactable
     public void C_OnMenuClosed(object sender, System.EventArgs e)
     {
         if(isOpen) CloseChest();
+    }
+
+    public void C_OnActivityStarted(object sender, System.EventArgs e)
+    {
+        activityStarted = true;
     }
 }

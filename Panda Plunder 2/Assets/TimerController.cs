@@ -70,6 +70,7 @@ public class TimerController : Interactable
     private void SetTimer(int minutes, int seconds)
     {
         ResetTimer();
+        timerText.color = new Color(255, 255, 255, 1);
         interval = new Interval(minutes, seconds);
     }
 

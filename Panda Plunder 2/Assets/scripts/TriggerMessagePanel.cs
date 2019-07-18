@@ -3,8 +3,8 @@ using UnityEngine.UI;
 
 public class TriggerMessagePanel : MonoBehaviour
 {
-    public string messagesToSend;
-    public Sprite spritesToAccompanyMessage;
+    public string messageToSend;
+    public Sprite spriteToAccompanyMessage;
     public float numSecondsToShowMessages;
     public bool destroyTriggerWhenDone;
     public bool hideMessagePanel;
@@ -12,8 +12,8 @@ public class TriggerMessagePanel : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         if (hideMessagePanel) MessagePanelController.HideMessage();
-        else if (spritesToAccompanyMessage != null) MessagePanelController.DisplayMessage(messagesToSend, spritesToAccompanyMessage, numSecondsToShowMessages);
-        else MessagePanelController.DisplayMessage(messagesToSend, numSecondsToShowMessages);
+        else if (spriteToAccompanyMessage != null) MessagePanelController.DisplayMessage(messageToSend, spriteToAccompanyMessage, numSecondsToShowMessages);
+        else MessagePanelController.DisplayMessage(messageToSend, numSecondsToShowMessages);
         if (destroyTriggerWhenDone) Destroy(this.gameObject);
     }
 }

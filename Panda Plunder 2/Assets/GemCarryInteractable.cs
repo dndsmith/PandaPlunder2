@@ -32,19 +32,25 @@ public class GemCarryInteractable : Interactable
             if (ge.pickup && ge.inProximity) OnPickUp(ge.character);
             else if (ge.drop && ge.inProximity) OnDrop();
             else if (ge.inProximity) InProximityReaction();
-            else if (ge.inTriggerStay) ShowPrompt();
+            else if (ge.inTriggerStay && prompt != null) ShowPrompt();
             else OutOfProximityReaction();
         }
     }
 
     override protected void InProximityReaction()
     {
-        ShowPrompt();
+        if (prompt != null) ShowPrompt();
     }
 
     override protected void OutOfProximityReaction()
     {
-        HidePrompt();
+        if (prompt != null) HidePrompt();
+    }
+
+    protected override void ShowPrompt()
+    {
+        prompt.enabled = true;
+        prompt.rectTransform.position = cam.WorldToScreenPoint(transform.position + new Vector3(0, 0, 2));
     }
 
     private void OnPickUp(InteractableEvent.Character C)

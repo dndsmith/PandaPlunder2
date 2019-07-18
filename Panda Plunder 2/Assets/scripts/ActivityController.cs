@@ -14,6 +14,9 @@ public abstract class ActivityController : MonoBehaviour
     public GameScore gameScore;
     protected const int correctBonus = 1000;
 
+    // activity has started
+    public event EventHandler<EventArgs> ActivityStarted;
+
     // good job quotes
     protected string[] goodJob =
     {
@@ -36,6 +39,8 @@ public abstract class ActivityController : MonoBehaviour
 
     public virtual void StartActivity()
     {
+        EventArgs e = new EventArgs();
+        OnActivityStarted(e);
         timer.ReceiveEvent(new TimerEvent(InteractableEvent.Character.Player, true, true, false, minutesForTimer, secondsForTimer)); // start timer
     }
 
@@ -62,5 +67,10 @@ public abstract class ActivityController : MonoBehaviour
         SW.Stop();
         timer.ReceiveEvent(new TimerEvent(InteractableEvent.Character.Player, false, false, true, 0, 0));
         DestroyActivity();
+    }
+
+    protected virtual void OnActivityStarted(EventArgs e)
+    {
+        ActivityStarted?.Invoke(this, e);
     }
 }
