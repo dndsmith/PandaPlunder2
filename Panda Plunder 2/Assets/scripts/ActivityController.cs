@@ -25,7 +25,16 @@ public abstract class ActivityController : MonoBehaviour
         "You done good",
         "Nailed it",
         "Well done, young padawan",
-        "Done well, you have",
+        "Done well, you have"
+    };
+
+    protected string[] incorrectAnswer =
+    {
+        "Not quite correct!",
+        "Close, but not quite right",
+        "Better luck next time!",
+        "Incorrect!",
+        "Oof, that's wrong"
     };
 
     // end level
@@ -60,7 +69,7 @@ public abstract class ActivityController : MonoBehaviour
     {
         System.Diagnostics.Stopwatch SW = new System.Diagnostics.Stopwatch();
         SW.Start();
-        while(SW.Elapsed.TotalSeconds < 3) // wait a 3 seconds before hiding timer
+        while(SW.Elapsed.TotalSeconds < 5) // wait 5 seconds before hiding timer
         {
             yield return 0;
         }

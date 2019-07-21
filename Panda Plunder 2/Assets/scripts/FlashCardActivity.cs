@@ -53,5 +53,6 @@ public class FlashCardActivity : ActivityController
             scoreToAdd = correctBonus;
             MessagePanelController.DisplayMessage(RandomMessageGenerator.GenerateRandomMessage(goodJob), 5f);
         }
+        else MessagePanelController.DisplayMessage(RandomMessageGenerator.GenerateRandomMessage(incorrectAnswer), 5f);
     }
 }

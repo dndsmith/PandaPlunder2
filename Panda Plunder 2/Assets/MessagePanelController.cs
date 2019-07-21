@@ -65,29 +65,30 @@ public class MessagePanelController : MonoBehaviour
 
     IEnumerator TimedDisplay(string memo, float time)
     {
-        DisplayMessage(memo);
-        stopwatch.Start();
         if(stopwatch.Elapsed.TotalSeconds > 0)
         {
             stopwatch.Reset();
-            stopwatch.Start();
+            HideMessage();
         }
-        while(stopwatch.Elapsed.TotalSeconds < time)
+        stopwatch.Start();
+        DisplayMessage(memo);
+        while (stopwatch.Elapsed.TotalSeconds < time)
         {
             yield return 0;
         }
         stopwatch.Reset();
         HideMessage();
     }
+
     IEnumerator TimedDisplay(string memo, Sprite sprite, float time)
     {
-        DisplayMessage(memo, sprite);
-        stopwatch.Start();
         if (stopwatch.Elapsed.TotalSeconds > 0)
         {
             stopwatch.Reset();
-            stopwatch.Start();
+            HideMessage();
         }
+        stopwatch.Start();
+        DisplayMessage(memo, sprite);
         while (stopwatch.Elapsed.TotalSeconds < time)
         {
             yield return 0;

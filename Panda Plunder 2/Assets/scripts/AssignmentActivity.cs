@@ -44,10 +44,11 @@ public class AssignmentActivity : ActivityController
             int index = variableNames.IndexOf(variable.varName);
             if(index == -1)
             {
-                MessagePanelController.DisplayMessage("oops, didn't find the variable...contact the nearest adult", 5f);
+                MessagePanelController.DisplayMessage("oops, didn't find the chest...tell the nearest adult", 5f);
             }
             else if((typesForEachVariable[index] != variable.GetItemType()) || countsForEachVariable[index] != variable.GetValue().Length)
             {
+                MessagePanelController.DisplayMessage(RandomMessageGenerator.GenerateRandomMessage(incorrectAnswer), 3f);
                 return false;
             }
         }
