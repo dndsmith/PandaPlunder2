@@ -7,18 +7,8 @@ using UnityEngine.UI;
 
 public class ProgramCardInteractable : Interactable
 {
-    // boolean states
-    private bool isBeingViewed = false;
-
-    public moveScore MS;
+    public ProgramCardViewer cardViewer;
     public Sprite programCard;
-    public moveCharacter MC;
-    public GameObject barrier;
-
-    private void Start()
-    {
-        MS.toView = false;
-    }
 
     public override void ReceiveEvent(InteractableEvent e)
     {
@@ -31,13 +21,13 @@ public class ProgramCardInteractable : Interactable
             ProgramCardEvent pce = (ProgramCardEvent)e;
             if (pce.viewCard)
             {
-                if (isBeingViewed)
+                if (cardViewer.IsBeingViewed())
                     HideCard();
                 else
                     ShowCard();
             }
-            else if (pce.inProximity && !isBeingViewed) InProximityReaction();
-            else if (pce.inTriggerStay && !isBeingViewed) ShowPrompt();
+            else if (pce.inProximity && !cardViewer.IsBeingViewed()) InProximityReaction();
+            else if (pce.inTriggerStay && !cardViewer.IsBeingViewed()) ShowPrompt();
             else OutOfProximityReaction();
         }
     }
@@ -54,23 +44,15 @@ public class ProgramCardInteractable : Interactable
 
     private void ShowCard()
     {
-        if (isBeingViewed) return;
-        MS.gameObject.GetComponent<Image>().sprite = programCard;
+        if (cardViewer.IsBeingViewed()) return;
+        cardViewer.ChangeCard(programCard);
         HidePrompt();
-        MS.toView = isBeingViewed = true;
-        MC.enabled = false;
+        cardViewer.ShowCard(this);
     }
 
     private void HideCard()
     {
-        if (!isBeingViewed) return;
-        MS.toView = isBeingViewed = false;
-        MC.enabled = true;
-        if (barrier != null) Destroy(barrier);
-    }
-
-    public void PlayerExitedCardGUI()
-    {
-        HideCard();
+        if (!cardViewer.IsBeingViewed()) return;
+        cardViewer.HideCard(this);
     }
 }

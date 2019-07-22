@@ -34,9 +34,16 @@ public abstract class Interactable : MonoBehaviour
     protected abstract void OutOfProximityReaction();
     protected virtual void ShowPrompt()
     {
-        prompt.enabled = true;
-        prompt.rectTransform.position = cam.WorldToScreenPoint(transform.position + new Vector3(0, 0, 1));
+        if (prompt != null)
+        {
+            prompt.enabled = true;
+            prompt.rectTransform.position = cam.WorldToScreenPoint(transform.position + new Vector3(0, 0, 1));
+        }
     }
 
-    protected void HidePrompt() => prompt.enabled = false;  // ooh, fancy arrow thang
+    protected void HidePrompt()
+    {
+        if (prompt != null) prompt.enabled = false;
+    }
+    protected void OnDestroy() => HidePrompt(); // ooh, fancy arrow thang
 }

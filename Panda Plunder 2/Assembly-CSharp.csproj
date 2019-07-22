@@ -110,7 +110,6 @@
     <Compile Include="Assets\ProgramCardInteractable.cs" />
     <Compile Include="Assets\QDoorControl.cs" />
     <Compile Include="Assets\scripts\ActivityController.cs" />
-    <Compile Include="Assets\scripts\ActivityStartedListener.cs" />
     <Compile Include="Assets\scripts\animationHandler.cs" />
     <Compile Include="Assets\scripts\AssignmentActivity.cs" />
     <Compile Include="Assets\scripts\AssignmentMenu.cs" />
@@ -120,15 +119,19 @@
     <Compile Include="Assets\scripts\CarriableObject.cs" />
     <Compile Include="Assets\scripts\ChangeImage.cs" />
     <Compile Include="Assets\scripts\ChestEvent.cs" />
+    <Compile Include="Assets\scripts\ChestOpenedEventArgs.cs" />
     <Compile Include="Assets\scripts\CommandActivity.cs" />
     <Compile Include="Assets\scripts\CountdownEvent.cs" />
     <Compile Include="Assets\scripts\creditsSwitch.cs" />
     <Compile Include="Assets\scripts\cribRock.cs" />
     <Compile Include="Assets\scripts\DeleteThis.cs" />
+    <Compile Include="Assets\scripts\DestroyOnActivityStart.cs" />
+    <Compile Include="Assets\scripts\DestroyOnHideProgramCard.cs" />
     <Compile Include="Assets\scripts\DoorEvent.cs" />
     <Compile Include="Assets\scripts\DoorInteractable.cs" />
     <Compile Include="Assets\scripts\DragItem.cs" />
     <Compile Include="Assets\scripts\DropZone.cs" />
+    <Compile Include="Assets\scripts\EnableOnActivityStart.cs" />
     <Compile Include="Assets\scripts\EndGame.cs" />
     <Compile Include="Assets\scripts\EndLevel.cs" />
     <Compile Include="Assets\scripts\ExitDoor.cs" />
@@ -142,6 +145,7 @@
     <Compile Include="Assets\scripts\GameScore.cs" />
     <Compile Include="Assets\scripts\GemCollect.cs" />
     <Compile Include="Assets\scripts\GemEvent.cs" />
+    <Compile Include="Assets\scripts\HideProgramCardEventArgs.cs" />
     <Compile Include="Assets\scripts\ignoreLights.cs" />
     <Compile Include="Assets\scripts\Interactable.cs" />
     <Compile Include="Assets\scripts\InteractableEvent.cs" />
@@ -160,6 +164,8 @@
     <Compile Include="Assets\scripts\MainMenuRandomMessage.cs" />
     <Compile Include="Assets\scripts\MakeGlow.cs" />
     <Compile Include="Assets\scripts\MenuHandler.cs" />
+    <Compile Include="Assets\scripts\MessageOnActivityStart.cs" />
+    <Compile Include="Assets\scripts\MessageOnChestOpen.cs" />
     <Compile Include="Assets\scripts\Move2DElement.cs" />
     <Compile Include="Assets\scripts\moveCharacter.cs" />
     <Compile Include="Assets\scripts\moveScore.cs" />
@@ -167,6 +173,7 @@
     <Compile Include="Assets\scripts\PlayerController.cs" />
     <Compile Include="Assets\scripts\PlayerInfo.cs" />
     <Compile Include="Assets\scripts\ProgramCardEvent.cs" />
+    <Compile Include="Assets\scripts\ProgramCardViewer.cs" />
     <Compile Include="Assets\scripts\propmtControll.cs" />
     <Compile Include="Assets\scripts\proxyDetect.cs" />
     <Compile Include="Assets\scripts\questionControl.cs" />

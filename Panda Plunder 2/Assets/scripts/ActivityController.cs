@@ -16,6 +16,7 @@ public abstract class ActivityController : MonoBehaviour
 
     // activity has started
     public event EventHandler<EventArgs> ActivityStarted;
+    public event EventHandler<EventArgs> ActivityStopped;
 
     // good job quotes
     protected string[] goodJob =
@@ -34,7 +35,7 @@ public abstract class ActivityController : MonoBehaviour
         "Close, but not quite right",
         "Better luck next time!",
         "Incorrect!",
-        "Oof, that's wrong"
+        "Ouch! That is incorrect"
     };
 
     // end level
@@ -56,6 +57,8 @@ public abstract class ActivityController : MonoBehaviour
     public virtual void StopActivity()
     {
         timer.ReceiveEvent(new TimerEvent(InteractableEvent.Character.Player, false, true, false, 0, 0)); // stop timer
+        EventArgs e = new EventArgs();
+        OnActivityStopped(e);
         StartCoroutine(WaitToHideTimer());
     }
 
@@ -81,5 +84,10 @@ public abstract class ActivityController : MonoBehaviour
     protected virtual void OnActivityStarted(EventArgs e)
     {
         ActivityStarted?.Invoke(this, e);
+    }
+
+    protected virtual void OnActivityStopped(EventArgs e)
+    {
+        ActivityStopped?.Invoke(this, e);
     }
 }

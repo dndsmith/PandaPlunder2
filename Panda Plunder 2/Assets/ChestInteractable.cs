@@ -1,16 +1,19 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 using System.Diagnostics;
 
 // EVENT LISTENER
 // @ requires prompt Image to not be null
+// some code is leftover from when gems were literally being dropped into the chest
 
 public class ChestInteractable : Interactable
 {
     // public objects
     public GameObject toBeSpawned;
     public moveCharacter MC;
+    public event EventHandler<ChestOpenedEventArgs> ChestOpened;
 
     // private objects
     private BoxCollider top;
@@ -124,6 +127,11 @@ public class ChestInteractable : Interactable
         anim.Play("ChestAnim");
         assignmentMenu.SetVariable(chestVariable);
         assignmentMenu.DisplayMenu();
+        ChestOpenedEventArgs e = new ChestOpenedEventArgs
+        {
+            chest = this
+        };
+        OnChestOpened(e);
         StartCoroutine(WaitToShowPrompt());
     }
 
@@ -156,20 +164,25 @@ public class ChestInteractable : Interactable
         while (sw.Elapsed.Seconds < 1)
             yield return 0;
         sw.Stop();
-        /*if (isOpen)
+        /*if (isOpen) // this was to make gems spawn above the chest
         {
             foreach(InventoryItem item in chestVariable.GetValue())
                 Instantiate(toBeSpawned, transform.position + new Vector3(0, 2, 0), Quaternion.identity);
         }*/
     }
 
-    public void C_OnMenuClosed(object sender, System.EventArgs e)
+    public void C_OnMenuClosed(object sender, EventArgs e)
     {
         if(isOpen) CloseChest();
     }
 
-    public void C_OnActivityStarted(object sender, System.EventArgs e)
+    public void C_OnActivityStarted(object sender, EventArgs e)
     {
         activityStarted = true;
+    }
+
+    protected virtual void OnChestOpened(ChestOpenedEventArgs e)
+    {
+        ChestOpened?.Invoke(this, e);
     }
 }

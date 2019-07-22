@@ -105,10 +105,10 @@ public class TimerController : Interactable
         if (MS.toView) MS.toView = false;
     }
 
-    // always 100 * remaining seconds
+    // always 10 * remaining seconds
     private void AddPoints()
     {
-        GS.addScore(100 * (interval.totalSecs - (int)stopWatch.Elapsed.TotalSeconds));
+        GS.addScore(10 * (interval.totalSecs - (int)stopWatch.Elapsed.TotalSeconds));
     }
 
     IEnumerator CountDown()

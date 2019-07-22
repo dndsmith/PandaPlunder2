@@ -2,11 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+// Until I can find a way to fix the lights, they are commented out
+
 public class FourCornersController : Interactable
 {
     // Lights are in order Red, Yellow, Green, Blue
     // ................(forward, left, right, backward)
-    private Light [] colorLights;
+    //private Light [] colorLights;
     private bool[] highBeams = new bool[4];
 
     private BoxCollider[] colliders;
@@ -15,13 +17,9 @@ public class FourCornersController : Interactable
 
     void Start()
     {
-        colorLights = GetComponentsInChildren<Light>();
+        //colorLights = GetComponentsInChildren<Light>();
         flashCardActivity = GetComponentInParent<FlashCardActivity>();
         colliders = GetComponentsInChildren<BoxCollider>();
-        for (int i = 1; i < colliders.Length; i++)
-        {
-            colliders[i].enabled = false;
-        }
         DisableLights();
     }
 
@@ -66,10 +64,10 @@ public class FourCornersController : Interactable
     // what if we did a coroutine so the lights come on one at a time?
     public void EnableLights()
     {
-        foreach (Light light in colorLights)
+        /*foreach (Light light in colorLights)
         {
             light.enabled = true;
-        }
+        }*/
     }
 
     public void DisableLights()
@@ -78,12 +76,16 @@ public class FourCornersController : Interactable
         DisableOneLight("yellow");
         DisableOneLight("green");
         DisableOneLight("blue");
+        for (int i = 1; i < colliders.Length; i++)
+        {
+            colliders[i].enabled = false;
+        }
         if (gameStarted) flashCardActivity.StopActivity();
     }
 
     public void EnableOneLight(string color)
     {
-        color = color.ToLower();
+        /*color = color.ToLower();
         if (color == "red" && !colorLights[0].enabled)
         {
             colorLights[0].enabled = true;
@@ -103,12 +105,12 @@ public class FourCornersController : Interactable
         else
         {
             Debug.Log("MISSPELLED color of light to enable: " + color + ". Or " + color + " is already on");
-        }
+        }*/
     }
 
     public void DisableOneLight(string color)
     {
-        color = color.ToLower();
+        /*color = color.ToLower();
         if (color == "red")
         {
             TurnOffHighBeam(color);
@@ -132,7 +134,7 @@ public class FourCornersController : Interactable
         else
         {
             Debug.Log("MISSPELLED color of light to disable: " + color);
-        }
+        }*/
     }
 
     // Exaggerate a light (e.g. if walk in direction of the light, make it brighter)
@@ -145,25 +147,25 @@ public class FourCornersController : Interactable
         if(color == "red" && !highBeams[0])
         {
             //colorLights[0].intensity = 1500f;
-            colorLights[0].range = 20f;
+            //colorLights[0].range = 20f;
             highBeams[0] = true;
         }
         else if(color == "yellow" && !highBeams[1])
         {
             //colorLights[1].intensity = 1500f;
-            colorLights[1].range = 20f;
+            //colorLights[1].range = 20f;
             highBeams[1] = true;
         }
         else if (color == "green" && !highBeams[2])
         {
             //colorLights[2].intensity = 1500f;
-            colorLights[2].range = 20f;
+            //colorLights[2].range = 20f;
             highBeams[2] = true;
         }
         else if (color == "blue" && !highBeams[3])
         {
             //colorLights[3].intensity = 1500f;
-            colorLights[3].range = 20f;
+            //colorLights[3].range = 20f;
             highBeams[3] = true;
         }
         else
@@ -188,26 +190,26 @@ public class FourCornersController : Interactable
         color = color.ToLower();
         if (color == "red")
         {
-            colorLights[0].intensity = 5f;
-            colorLights[0].range = 3f;
+            //colorLights[0].intensity = 5f;
+            //colorLights[0].range = 3f;
             highBeams[0] = false;
         }
         else if (color == "yellow")
         {
-            colorLights[1].intensity = 5f;
-            colorLights[1].range = 3f;
+            //colorLights[1].intensity = 5f;
+            //colorLights[1].range = 3f;
             highBeams[1] = false;
         }
         else if (color == "green")
         {
-            colorLights[2].intensity = 5f;
-            colorLights[2].range = 3f;
+            //colorLights[2].intensity = 5f;
+            //colorLights[2].range = 3f;
             highBeams[2] = false;
         }
         else if (color == "blue")
         {
-            colorLights[3].intensity = 5f;
-            colorLights[3].range = 3f;
+            //colorLights[3].intensity = 5f;
+            //colorLights[3].range = 3f;
             highBeams[3] = false;
         }
         else

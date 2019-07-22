@@ -9,7 +9,6 @@ public class AssignmentMenu : MonoBehaviour
     public event EventHandler<EventArgs> MenuClosed; // event fires when the menu is closed
 
     public Text variableName;
-    public bool displayInstructions = false;
 
     private Inventory inventory;
     private moveScore[] moves;
@@ -31,11 +30,6 @@ public class AssignmentMenu : MonoBehaviour
 
     public void DisplayMenu()
     {
-        if(displayInstructions)
-        {
-            MessagePanelController.DisplayMessage("Click and drag the gems!", 3f);
-            displayInstructions = false;
-        }
         moves[0].toView = isDisplayed = true;
         EventArgs e = new EventArgs();
         OnMenuOpened(e);

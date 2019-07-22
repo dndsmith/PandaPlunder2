@@ -9,39 +9,74 @@ public class CommandActivity : ActivityController
     private List<string> playerInputSequence = new List<string>();
     private int indexOfFirstCorrectInput = 0;
     private string playerInputString = "";
+    private bool correctAnswer = true;
+    private bool activityStarted = false;
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Alpha1))
+        if (activityStarted)
         {
-            playerInputSequence.Add("dance1");
-        }
+            if (Input.GetKeyDown(KeyCode.Alpha1))
+            {
+                playerInputSequence.Add("dance1");
+                correctAnswer = CheckInput();
+            }
 
-        else if (Input.GetKeyDown(KeyCode.Alpha2))
-        {
-            playerInputSequence.Add("dance2");
-        }
+            else if (Input.GetKeyDown(KeyCode.Alpha2))
+            {
+                playerInputSequence.Add("dance2");
+                correctAnswer = CheckInput();
+            }
 
-        else if (Input.GetKeyDown(KeyCode.Alpha3))
-        {
-            playerInputSequence.Add("dance3");
-        }
+            else if (Input.GetKeyDown(KeyCode.Alpha3))
+            {
+                playerInputSequence.Add("dance3");
+                correctAnswer = CheckInput();
+            }
 
-        else if (Input.GetKeyDown(KeyCode.Alpha4))
-        {
-            playerInputSequence.Add("dance4");
+            else if (Input.GetKeyDown(KeyCode.Alpha4))
+            {
+                playerInputSequence.Add("dance4");
+                correctAnswer = CheckInput();
+            }
         }
     }
 
-    private void CheckInput(string command)
+    private bool CheckInput()
     {
+        // TEMPORARY AND POOR DESIGN
+        if (playerInputSequence.Count > sequenceOfCommands.Length) return true;
+
         for(int i = indexOfFirstCorrectInput; i < playerInputSequence.Count; i++)
         {
             if (playerInputSequence[i] != sequenceOfCommands[i - indexOfFirstCorrectInput])
             {
                 //indexOfFirstCorrectInput = i + 1;
-                MessagePanelController.DisplayMessage("Ouch! That wasn't quite right. Better luck next time!", 4f);
+                MessagePanelController.DisplayMessage(RandomMessageGenerator.GenerateRandomMessage(incorrectAnswer), 5f);
+                return false;
             }
+        }
+        return true;
+    }
+
+    public override void StartActivity()
+    {
+        base.StartActivity();
+        activityStarted = true;
+    }
+
+    public override void StopActivity()
+    {
+        base.StopActivity();
+        activityStarted = false;
+        if(correctAnswer && playerInputSequence.Count == sequenceOfCommands.Length)
+        {
+            gameScore.addScore(correctBonus);
+            MessagePanelController.DisplayMessage(RandomMessageGenerator.GenerateRandomMessage(goodJob), 5f);
+        }
+        else if(correctAnswer) // they correctly performed a subset of the sequence
+        {
+            MessagePanelController.DisplayMessage(RandomMessageGenerator.GenerateRandomMessage(incorrectAnswer), 5f);
         }
     }
 }
