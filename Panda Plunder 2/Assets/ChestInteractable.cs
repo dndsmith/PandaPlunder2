@@ -90,7 +90,7 @@ public class ChestInteractable : Interactable
         }
         else if (!activityStarted)
         {
-            MessagePanelController.DisplayMessage("you must step on the octagon first", 2f);
+            MessagePanelController.DisplayMessage("you must step on the start pad first", 2f);
         }
         else
         {

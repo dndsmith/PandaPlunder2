@@ -22,6 +22,7 @@ public class PlayerController : MonoBehaviour
     Animator animator;
     Interactable currentInteractable;
     Inventory playerInventory;
+    moveCharacter MC;
 
     // integers
     private const int NUM_LEVELS = 3;
@@ -43,6 +44,7 @@ public class PlayerController : MonoBehaviour
     {
         particles = GetComponentInChildren<ParticleSystem>();
         animator = GetComponentInChildren<Animator>();
+        MC = GetComponentInChildren<moveCharacter>();
         currentInteractable = null;
         SetComboLevel(0);
     }
