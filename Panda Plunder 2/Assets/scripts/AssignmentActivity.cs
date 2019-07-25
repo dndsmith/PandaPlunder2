@@ -13,11 +13,13 @@ public class AssignmentActivity : ActivityController
     // variables in children and the variables menu
     private Variable[] variables;
     private VariablesMenu variablesMenu;
+    private AssignmentMenu assignmentMenu;
 
     void Start()
     {
         variables = GetComponentsInChildren<Variable>();
         variablesMenu = FindObjectOfType<VariablesMenu>();
+        assignmentMenu = FindObjectOfType<AssignmentMenu>();
     }
 
     public override void StopActivity()
@@ -54,5 +56,12 @@ public class AssignmentActivity : ActivityController
         }
         MessagePanelController.DisplayMessage(RandomMessageGenerator.GenerateRandomMessage(goodJob), 3f);
         return true;
+    }
+
+    public override void DestroyActivity()
+    {
+        HideVariables();
+        assignmentMenu.CloseMenu();
+        base.DestroyActivity();
     }
 }

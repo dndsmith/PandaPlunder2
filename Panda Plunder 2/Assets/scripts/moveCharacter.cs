@@ -18,6 +18,19 @@ public class moveCharacter : MonoBehaviour
 
     public CapsuleCollider SoundCollider;
 
+    private KeyCode[] movementKeys = new KeyCode[4];
+
+    private void Start()
+    {
+        /*read from streaming assets
+        if(0) WASD
+        else Left-Right-Up-Down*/
+        movementKeys[0] = KeyCode.W;
+        movementKeys[1] = KeyCode.A;
+        movementKeys[2] = KeyCode.S;
+        movementKeys[3] = KeyCode.D;
+    }
+
     void FixedUpdate()
     {
 
@@ -25,25 +38,25 @@ public class moveCharacter : MonoBehaviour
         HPower = Input.GetAxis("Horizontal");
         VPower = Input.GetAxis("Vertical");
 
-        if (Input.GetKey(KeyCode.W))
+        if (Input.GetKey(movementKeys[0]))
         {
 
             VPower = 1;
 
         }
-        if (Input.GetKey(KeyCode.A))
+        if (Input.GetKey(movementKeys[1]))
         {
 
             HPower = -1;
 
         }
-        if (Input.GetKey(KeyCode.S))
+        if (Input.GetKey(movementKeys[2]))
         {
 
             VPower = -1;
 
         }
-        if (Input.GetKey(KeyCode.D))
+        if (Input.GetKey(movementKeys[3]))
         {
 
             HPower = 1;

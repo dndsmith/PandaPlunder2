@@ -21,7 +21,7 @@ public class ChestInteractable : Interactable
     private Variable chestVariable;
     private AssignmentActivity assignmentActivity;
 
-    // vars related to phsical gems in chest
+    // vars related to phsical gems in chest --- OLD WAY OF ASSIGNING CHEST
     public string [] gemColors;
     public int [] numGemsPerColor;
     private Dictionary<string, int> chestContents = new Dictionary<string, int>();
@@ -29,6 +29,7 @@ public class ChestInteractable : Interactable
     // boolean states
     private bool isOpen = false;
     private bool activityStarted = false;
+    private bool isBeingDestroyed = false;
 
     private void Start()
     {
@@ -173,7 +174,7 @@ public class ChestInteractable : Interactable
 
     public void C_OnMenuClosed(object sender, EventArgs e)
     {
-        if(isOpen) CloseChest();
+        if(isOpen && !isBeingDestroyed) CloseChest();
     }
 
     public void C_OnActivityStarted(object sender, EventArgs e)

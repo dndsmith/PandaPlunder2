@@ -183,6 +183,7 @@
     <Compile Include="Assets\scripts\sackFill.cs" />
     <Compile Include="Assets\scripts\Scale2DElement.cs" />
     <Compile Include="Assets\scripts\score.cs" />
+    <Compile Include="Assets\scripts\SettingsMenuHandler.cs" />
     <Compile Include="Assets\scripts\SparkleControl.cs" />
     <Compile Include="Assets\scripts\spawnturkey.cs" />
     <Compile Include="Assets\scripts\StartGame.cs" />

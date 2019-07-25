@@ -45,5 +45,5 @@ public abstract class Interactable : MonoBehaviour
     {
         if (prompt != null) prompt.enabled = false;
     }
-    protected void OnDestroy() => HidePrompt(); // ooh, fancy arrow thang
+    protected virtual void OnDestroy() => HidePrompt(); // ooh, fancy arrow thang
 }

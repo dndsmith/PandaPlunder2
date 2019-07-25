@@ -22,11 +22,12 @@ public class PlayerController : MonoBehaviour
     Animator animator;
     Interactable currentInteractable;
     Inventory playerInventory;
-    moveCharacter MC;
+    //moveCharacter MC; // might use to disallow movement when dancing
 
-    // integers
+    // integers & enums
     private const int NUM_LEVELS = 3;
-    private int level = 0;
+    private int comboLevel = 0;
+    private KeyCode interactKey;
 
     // boolean states
     private bool isCarryingObject = false;
@@ -44,7 +45,9 @@ public class PlayerController : MonoBehaviour
     {
         particles = GetComponentInChildren<ParticleSystem>();
         animator = GetComponentInChildren<Animator>();
-        MC = GetComponentInChildren<moveCharacter>();
+        //MC = GetComponentInChildren<moveCharacter>();
+        // interactKey gotten from streamingassets
+        interactKey = KeyCode.Space;
         currentInteractable = null;
         SetComboLevel(0);
     }
@@ -52,7 +55,7 @@ public class PlayerController : MonoBehaviour
     private void Update()
     {
         // // INTERACTIONS USING E button
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(interactKey))
         {
             if(currentInteractable != null)
             {
@@ -86,7 +89,7 @@ public class PlayerController : MonoBehaviour
         }
 
         /* INTERACTIONS USING SPACE BAR
-        else if(Input.GetKeyDown(KeyCode.Space))
+        else if(Input.GetKeyDown(interactKey))
         {
             if(currentInteractable != null)
             {
@@ -220,19 +223,19 @@ public class PlayerController : MonoBehaviour
 
     private void SetComboLevel(int lvl)
     {
-        level = lvl;
+        comboLevel = lvl;
         TriggerEffects();
     }
 
     private void TriggerEffects()
     {
-        if(level == 0)
+        if(comboLevel == 0)
         {
             particles.Stop();
         }
         else
         {
-            switch (level)
+            switch (comboLevel)
             {
                 case 1:
                     SetParticles(75, Color.red, 1f, false);
