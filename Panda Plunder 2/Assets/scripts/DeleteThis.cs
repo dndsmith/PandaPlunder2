@@ -1,6 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+// Game 1/2, was trying to add a 16th level
+
 public class DeleteThis : MonoBehaviour
 {
     gameData DB;

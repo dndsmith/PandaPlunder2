@@ -1,6 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+// Game 2
+// NOT USED
+
 [RequireComponent(typeof(RectTransform))]
 public class Scale2DElement : MonoBehaviour
 {

@@ -2,6 +2,8 @@
 using UnityEngine.UI;
 using System;
 
+// Game 2
+
 public class ProgramCardViewer : MonoBehaviour
 {
     public moveCharacter MC;

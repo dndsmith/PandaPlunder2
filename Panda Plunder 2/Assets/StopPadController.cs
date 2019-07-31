@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using UnityEngine;
 
+// Game 2
+
 // EVENT LISTENER
 // need a design pattern (factory?) so can have only one variable instead of two for the activity controller type
 // ---> current solution of having both an assignment activity and a command activity is a workaround

@@ -1,6 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+// Game 2
+
 public class MessageOnActivityStart : MonoBehaviour
 {
     public string message;

@@ -1,6 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+// Game 2
+
 public class ProgramCardEvent : InteractableEvent
 {
     public bool viewCard;

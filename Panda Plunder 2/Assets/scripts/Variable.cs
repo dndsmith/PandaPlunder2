@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections.Generic;
 
-// Prob doesn't have to inherit from MonoBehaviour
+// Game 2
 
 public class Variable : MonoBehaviour
 {

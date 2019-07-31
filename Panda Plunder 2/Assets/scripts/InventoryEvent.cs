@@ -1,6 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+// Game 2
+// NOT USED
+
 public class InventoryEvent : InteractableEvent
 {
     public InventoryEvent()

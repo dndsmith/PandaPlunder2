@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-// gotta be a way to make open_close less confusing
+// Game 2
 
 public class ChestEvent : InteractableEvent
 {

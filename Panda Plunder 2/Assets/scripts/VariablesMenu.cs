@@ -1,6 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections.Generic;
 
+// Game 2
+
 public class VariablesMenu : MonoBehaviour
 {
     public GameObject dropZonePrefab;

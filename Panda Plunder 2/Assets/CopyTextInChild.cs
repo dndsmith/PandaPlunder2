@@ -1,6 +1,8 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 
+// Game 2
+
 public class CopyTextInChild : MonoBehaviour
 {
     Text[] myText;

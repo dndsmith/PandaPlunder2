@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+// OLD Game 1
+// NOT USED
+
 public class FoodInteract : interaction {
 
     public int Calories;

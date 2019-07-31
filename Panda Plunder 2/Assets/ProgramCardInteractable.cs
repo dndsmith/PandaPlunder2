@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+// Game 2
+
 // TRY LOWERING LIGHTS?
 
 public class ProgramCardInteractable : Interactable

@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+// OLD Game 1
+
 [System.Serializable]
 public class PlayerInfo
 {

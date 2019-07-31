@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-// gotta be a way to make start_stop less confusing
+// Game 2
 
 public class TimerEvent : InteractableEvent
 {

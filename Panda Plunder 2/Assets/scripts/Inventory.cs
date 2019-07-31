@@ -1,6 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections.Generic;
 
+// Game 2
+
 // type (see Stash and ItemType functions) should always have the form <modifier_1>...<modifier_n><tag>
 
 public class Inventory : MonoBehaviour
@@ -20,7 +22,7 @@ public class Inventory : MonoBehaviour
             {
                 box.AddItem(item);
                 Destroy(item.gameObject);
-                gameScore.addScore(50); // TEMOROARY????
+                gameScore.addScore(50); // TEMPORARY????
                 return true;
             }
         }
@@ -31,7 +33,7 @@ public class Inventory : MonoBehaviour
             if (box.AddItem(item))
             {
                 Destroy(item.gameObject);
-                gameScore.addScore(50); // TEMOROARY????
+                gameScore.addScore(50); // TEMPORARY????
                 return true;
             }
         }
@@ -47,7 +49,7 @@ public class Inventory : MonoBehaviour
             if (item.type.Equals(box.GetItemType()))
             {
                 box.AddItem(item);
-                gameScore.addScore(50); // TEMOROARY????
+                gameScore.addScore(50); // TEMPORARY????
                 return true;
             }
         }
@@ -57,7 +59,7 @@ public class Inventory : MonoBehaviour
         {
             if (box.AddItem(item))
             {
-                gameScore.addScore(50); // TEMOROARY????
+                gameScore.addScore(50); // TEMPORARY????
                 return true;
             }
         }
@@ -77,7 +79,7 @@ public class Inventory : MonoBehaviour
                 {
                     Destroy(item.gameObject);
                 }
-                gameScore.addScore(50); // TEMOROARY????
+                gameScore.addScore(50); // TEMPORARY????
                 return true;
             }
         }
@@ -91,7 +93,7 @@ public class Inventory : MonoBehaviour
                 {
                     Destroy(item.gameObject);
                 }
-                gameScore.addScore(50); // TEMOROARY????
+                gameScore.addScore(50); // TEMPORARY????
                 return true;
             }
         }
@@ -107,7 +109,7 @@ public class Inventory : MonoBehaviour
             if (items[0].type.Equals(box.GetItemType()))
             {
                 box.AddItems(items);
-                gameScore.addScore(50); // TEMOROARY????
+                gameScore.addScore(50); // TEMPORARY????
                 return true;
             }
         }
@@ -117,7 +119,7 @@ public class Inventory : MonoBehaviour
         {
             if (box.AddItems(items))
             {
-                gameScore.addScore(50); // TEMOROARY????
+                gameScore.addScore(50); // TEMPORARY????
                 return true;
             }
         }

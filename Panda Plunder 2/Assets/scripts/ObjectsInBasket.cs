@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+// Game 2
+// NOT USED
+
 public class ObjectsInBasket : MonoBehaviour
 {
     public GameScore GS;

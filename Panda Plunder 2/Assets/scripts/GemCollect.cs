@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+// Game 2
+// NOT USED
+
 public class GemCollect : MonoBehaviour
 {
     public GameScore GS;

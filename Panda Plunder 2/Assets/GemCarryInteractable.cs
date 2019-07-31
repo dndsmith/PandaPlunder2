@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+// Game 2
+
 /* * * TODO
  * 1. Raise height of gem at angle relative to pick-up and then move it to front of raccoon (IEnumerator)
  * 2. Automate assigning the color value for the gem rather than depending on the Unity dev

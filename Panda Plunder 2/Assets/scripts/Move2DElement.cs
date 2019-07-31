@@ -1,6 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+// Game 2
+// NOT USED?
+
 public class Move2DElement : MonoBehaviour
 {
     public IEnumerator MoveElement(Vector3 startPos, Vector3 endPos, float time)

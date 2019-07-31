@@ -4,6 +4,7 @@ using System.Diagnostics;
 using UnityEngine;
 using UnityEngine.UI;
 
+// Game 2
 // Designed this with the countdown being a one-time event...gonna have to change that
 
 public class CountdownInteractable : Interactable

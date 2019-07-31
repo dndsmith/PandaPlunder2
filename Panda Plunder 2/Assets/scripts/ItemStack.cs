@@ -2,6 +2,8 @@
 using UnityEngine.UI;
 using System.Collections.Generic;
 
+// Game 2
+
 public class ItemStack : MonoBehaviour
 {
     private Image itemImage;

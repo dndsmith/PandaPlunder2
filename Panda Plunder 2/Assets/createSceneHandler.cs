@@ -4,6 +4,8 @@ using System.IO;
 using UnityEngine;
 using UnityEngine.UI;
 
+// OLD Game 1
+
 public class createSceneHandler : MonoBehaviour {
 
     public gameData DB;

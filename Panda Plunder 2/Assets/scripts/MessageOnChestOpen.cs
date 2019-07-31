@@ -1,6 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections.Generic;
 
+// Game 2
+
 public class MessageOnChestOpen : MonoBehaviour
 {
     public List<ChestInteractable> chestsToSendMessageOn;

@@ -2,6 +2,8 @@
 using UnityEngine.UI;
 using System.Collections;
 
+// Game 2
+
 public class ChangeImage : MonoBehaviour
 {
     public Sprite swapSprite;

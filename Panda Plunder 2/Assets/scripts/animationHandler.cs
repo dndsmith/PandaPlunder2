@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+// DELETE THIS
+
 public class animationHandler : MonoBehaviour {
 
 

@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System;
 using System.Collections;
 
+// Game 2
+
 public class AssignmentActivity : ActivityController
 {
     // specifies which variables we want to check for correct type and count assigned by the student

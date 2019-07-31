@@ -1,6 +1,8 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 
+// Game 2
+
 public class InventoryItemComponent : MonoBehaviour
 {
     public string type;

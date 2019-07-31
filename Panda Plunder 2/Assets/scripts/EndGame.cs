@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+// OLD Game 1
+
 public class EndGame : MonoBehaviour {
 
     public wipeControl WP;

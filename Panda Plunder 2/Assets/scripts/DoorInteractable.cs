@@ -1,6 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+// Game 2
+
 public class DoorInteractable : Interactable
 {
     public const float accelerator = 5.0f;

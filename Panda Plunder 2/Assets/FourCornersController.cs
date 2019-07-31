@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+// Game 2
+
 // Until I can find a way to fix the lights, they are commented out
 
 public class FourCornersController : Interactable

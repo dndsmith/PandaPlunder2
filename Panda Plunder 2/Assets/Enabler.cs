@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+// Game 2
+
 public class Enabler : MonoBehaviour
 {
     public bool enableAtStart;

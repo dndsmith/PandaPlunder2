@@ -2,6 +2,8 @@
 using UnityEngine.UI;
 using System.Collections;
 
+// Game 2
+
 public class VariableHolder : MonoBehaviour
 {
     private Variable theVariable;

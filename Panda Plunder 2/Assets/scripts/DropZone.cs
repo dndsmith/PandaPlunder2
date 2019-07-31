@@ -2,6 +2,8 @@
 using System.Collections;
 using UnityEngine.EventSystems;
 
+// Game 2
+
 public class DropZone : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
     public DragItem residentItem = null; //fix accessibility

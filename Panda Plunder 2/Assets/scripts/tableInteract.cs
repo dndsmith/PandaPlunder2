@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+// OLD Game 1
+// NEVER USED
+
 public class tableInteract : interaction {
 
 

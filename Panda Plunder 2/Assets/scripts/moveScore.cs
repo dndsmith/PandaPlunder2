@@ -2,8 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-// was too lazy to completely redo this, so I just added a third point lol
-// definitely a mess, sorry
+// OLD Game 1 but used in Game 2
 
 public class moveScore : MonoBehaviour {
 

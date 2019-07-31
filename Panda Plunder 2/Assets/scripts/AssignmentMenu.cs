@@ -3,6 +3,8 @@ using UnityEngine.UI;
 using System.Collections.Generic;
 using System;
 
+// Game 2
+
 public class AssignmentMenu : MonoBehaviour
 {
     public event EventHandler<EventArgs> MenuOpened; // event fires when the menu is opened

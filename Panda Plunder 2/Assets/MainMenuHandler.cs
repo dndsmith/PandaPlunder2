@@ -1,10 +1,12 @@
 ﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 
+// Game 2
+
 public class MainMenuHandler : MonoBehaviour
 {
     // FIXME: parse string for commands. It is the event data
-    // COMMAND SYNTAX: commandToRun_relevantData
+    // COMMAND SYNTAX: <command_to_run>=<relevant_data>
     public virtual void OnButtonClick(string command)
     {
         string[] split = command.Split(new char[] { '=' });

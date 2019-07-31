@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+// OLD Game 1 but used in Game 2
+
 public class GameScore : MonoBehaviour
 {
     public int score = 0;

@@ -1,6 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+// Game 2
+
 // Event object for gems
 // TODO: overload equals operator
 

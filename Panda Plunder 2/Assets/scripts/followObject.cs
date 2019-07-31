@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+// OLD Game 1 but used in Game 2
+
 public class followObject : MonoBehaviour {
 
     public GameObject leader;

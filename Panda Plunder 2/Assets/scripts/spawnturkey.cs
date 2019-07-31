@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+// OLD Game 1
+// NEVER USED 
+
 public class spawnturkey : MonoBehaviour {
 
 

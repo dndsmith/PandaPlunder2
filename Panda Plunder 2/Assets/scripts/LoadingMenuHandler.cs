@@ -2,6 +2,9 @@
 using UnityEngine.UI;
 using System;
 
+// Game 2
+// NOT USED
+
 public class LoadingMenuHandler : MainMenuHandler
 {
     LoadingBar loadingBar;

@@ -3,6 +3,8 @@ using System.Diagnostics;
 using UnityEngine;
 using UnityEngine.UI;
 
+// Game 2
+
 public class MessagePanelController : MonoBehaviour
 {
     // Singleton

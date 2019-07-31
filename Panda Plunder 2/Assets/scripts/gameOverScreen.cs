@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+// OLD Game 1
+// NOT USED
+
 public class gameOverScreen : MonoBehaviour {
 
  

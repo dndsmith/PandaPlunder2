@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+// Game 1 or 2, don't remember
+// NOT USED
+
 public class UnlockDoor : MonoBehaviour
 {
     public ExitDoor ED;

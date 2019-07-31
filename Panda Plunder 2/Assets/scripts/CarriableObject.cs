@@ -2,10 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-
-/*
- * Dual purpose class for both the player and Sparkle to carry objects
- */
+// Game 2
+// NOT USED
 
 public class CarriableObject : MonoBehaviour
 {

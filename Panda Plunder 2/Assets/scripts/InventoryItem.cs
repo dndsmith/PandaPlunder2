@@ -1,6 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+// Game 2
+
 // This is a workaround for storing inventory items in a stack when their gameobjects get destroyed
 
 public class InventoryItem

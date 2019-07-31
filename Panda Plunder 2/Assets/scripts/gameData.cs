@@ -4,6 +4,8 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using System.IO;
 
+// OLD Game 1
+
 public class gameData : MonoBehaviour {
 
     private static bool created = false;

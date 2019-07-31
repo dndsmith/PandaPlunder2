@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-// A listener for events from characters
+// Game 2
+
+// A base class for listeners of events from characters
 // @invariant - only ONE Interactable component per GameObject. None on children
 
 public abstract class Interactable : MonoBehaviour
@@ -22,6 +24,7 @@ public abstract class Interactable : MonoBehaviour
             player.AddInteractable(this);
 
         // get sparkle object, add listener
+        // Since Sparkle isn't being used right now, it's not important
         sparkle = FindObjectOfType<SparkleControl>();
         if (sparkle != null)
             sparkle.AddInteractable(this);

@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+// OLD Game 1
+
 public class MenuHandler : MonoBehaviour {
 
     public gameData DB;

@@ -3,6 +3,9 @@ using System;
 using System.Diagnostics;
 using System.Collections;
 
+// Game 2
+// NOT USED
+
 public class LoadingBar : MonoBehaviour
 {
     public event EventHandler<EventArgs> Loaded;

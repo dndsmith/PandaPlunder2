@@ -2,6 +2,8 @@
 using UnityEngine.UI;
 using System.Collections.Generic;
 
+// Game 2
+
 // The "drop zone" for ItemStacks
 // I have been informed that returning null collections is bad practice...oh well
 // FIXME: refactor so that methods return empty array/list

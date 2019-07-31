@@ -4,6 +4,8 @@ using UnityEngine;
 using System;
 using System.Diagnostics;
 
+// Game 2
+
 // EVENT LISTENER
 // @ requires prompt Image to not be null
 // some code is leftover from when gems were literally being dropped into the chest

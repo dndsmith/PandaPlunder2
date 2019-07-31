@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 
+// Game 2
 // NOT FINISHED
 
 public class SettingsMenuHandler : MainMenuHandler

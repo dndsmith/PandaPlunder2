@@ -1,6 +1,11 @@
 ﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 
+// Game 2
+
+// Better design would be to change ActivityCompleted to an event listener for the event ActivityController.ActivityStopped
+// Also, change it so that the LoadScene back to MainScreen is in a separate function (for the potential pause menu)
+
 public class EndLevel : MonoBehaviour
 {
     private int numActivities;
