@@ -3,6 +3,10 @@ using System.Collections;
 
 // Game 2
 
+/*
+ *  Event data sent to a ChestInteractable.
+ */
+
 public class ChestEvent : InteractableEvent
 {
     public bool open_close_chest;

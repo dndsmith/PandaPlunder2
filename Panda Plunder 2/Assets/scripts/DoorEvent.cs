@@ -2,6 +2,11 @@
 using System.Collections;
 
 // Game 2
+// NOT USED SO FAR
+
+/*
+*  Event data sent to a DoorInteractable.
+*/
 
 public class DoorEvent : InteractableEvent
 {

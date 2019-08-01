@@ -4,6 +4,10 @@ using System.Collections;
 
 // Game 2
 
+/*
+ *  Changes the Sprite of a 2D image between a set of 2 sprites.
+ *  Used by the add/subtract buttons in the Assignment Menu.
+ */
 public class ChangeImage : MonoBehaviour
 {
     public Sprite swapSprite;

@@ -2,6 +2,13 @@
 using System.Collections;
 
 // Game 2
+// NOT USED SO FAR
+// Has some bugs
+
+/*
+ *  Controls interactions between the player character and a door.
+ *  The door can open, close, and show/hide a prompt.
+ */
 
 public class DoorInteractable : Interactable
 {

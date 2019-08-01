@@ -4,6 +4,10 @@ using System.Collections;
 // Game 2
 // NOT USED
 
+/*
+*  Event data sent to a CountdownInteractable.
+*/
+
 public class CountdownEvent : InteractableEvent
 {
     public CountdownEvent()

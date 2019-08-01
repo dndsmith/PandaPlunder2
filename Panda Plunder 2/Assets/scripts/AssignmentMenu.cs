@@ -5,6 +5,10 @@ using System;
 
 // Game 2
 
+/*
+ *  Controls the Assignment Menu and its operations.
+ */
+
 public class AssignmentMenu : MonoBehaviour
 {
     public event EventHandler<EventArgs> MenuOpened; // event fires when the menu is opened

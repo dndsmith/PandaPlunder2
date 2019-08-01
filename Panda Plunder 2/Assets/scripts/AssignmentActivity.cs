@@ -5,6 +5,12 @@ using System.Collections;
 
 // Game 2
 
+/*
+ *  Represents an activity where assignment is involved.
+ *  Contains extra data and logic related to the variables in the activity.
+ *  E.g. correct value for variable
+ */
+
 public class AssignmentActivity : ActivityController
 {
     // specifies which variables we want to check for correct type and count assigned by the student

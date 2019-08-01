@@ -3,6 +3,10 @@ using System.Collections;
 
 // Game 2
 
+/*
+ *  Destroys a set of GameObjects when the Program Card is hidden from view.
+ */
+
 public class DestroyOnHideProgramCard : MonoBehaviour
 {
     public ProgramCardInteractable PCI;

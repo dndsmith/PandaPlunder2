@@ -2,7 +2,12 @@
 using System.Collections.Generic;
 
 // Game 2
-// AKA Dance Activity
+
+/*
+ *  Represent an activity involving a sequence of commands (e.g. dances).
+ *  Contains extra data and logic to handle a sequence of player input once the activity is started
+ *      and to evaluate that sequence against a correct sequence of commands.
+ */
 
 public class CommandActivity : ActivityController
 {

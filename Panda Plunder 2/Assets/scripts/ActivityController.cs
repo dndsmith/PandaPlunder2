@@ -5,6 +5,15 @@ using System.Collections;
 
 // Game 2
 
+/*
+ *  Holds basic information about an Activity/Challenge, such as
+ *  - Correct answer
+ *  - Time limit
+ *  - Score awarded
+ *  - Start and Stop events
+ *  Other classes inherit this one to complete a specific implementation.
+ */
+
 public abstract class ActivityController : MonoBehaviour
 {
     // the timer
