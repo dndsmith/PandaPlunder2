@@ -4,13 +4,17 @@ using System.Collections.Generic;
 
 // Game 2
 
-// The "drop zone" for ItemStacks
+/*
+ *  Represents a box within an inventory.
+ *  Functions as a drop zone as well.
+ */
+
 // I have been informed that returning null collections is bad practice...oh well
-// FIXME: refactor so that methods return empty array/list
+// TODO MAYBE: refactor so that methods return empty array/list
 
 public class InventoryBox : MonoBehaviour
 {
-    public GameObject itemStackPrefab;
+    public GameObject itemStackPrefab; // this is to create the 2D item stack that can be dragged around
     private GameObject residentObject = null;
     private DropZone DZ;
 

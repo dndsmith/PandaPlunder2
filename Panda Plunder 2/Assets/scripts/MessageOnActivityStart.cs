@@ -3,6 +3,10 @@ using System.Collections;
 
 // Game 2
 
+/*
+ *  Displays a message at the start of an activity.
+ */
+
 public class MessageOnActivityStart : MonoBehaviour
 {
     public string message;

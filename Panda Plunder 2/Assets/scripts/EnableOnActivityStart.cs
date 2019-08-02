@@ -3,6 +3,10 @@ using System.Collections;
 
 // Game 2
 
+/*
+ *  Sets a GameObject to active at the start of an activity and inactive before the activity starts.
+ */
+
 public class EnableOnActivityStart : MonoBehaviour
 {
     public GameObject objectToEnable;

@@ -5,6 +5,11 @@ using UnityEngine.SceneManagement;
 
 // OLD Game 1
 
+/*
+ *  Triggered the animations, sounds, and text that displayed when the raccoon ran into a
+ *  panda in Game 1.
+ */
+
 public class gameOverControl : MonoBehaviour {
 
 

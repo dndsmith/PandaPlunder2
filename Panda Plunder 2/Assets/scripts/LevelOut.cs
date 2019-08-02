@@ -5,6 +5,12 @@ using UnityEngine.SceneManagement;
 
 // OLD Game 1
 
+/*
+ *  Records data in database (gameData) about the player's performance on this level
+ *  when the player enters a trigger with this script attached. It then calls on EndGame
+ *  to load the next level (which in Game 1 is always the Level Select screen).
+ */
+
 public class LevelOut : MonoBehaviour {
 
     public EndGame ender;

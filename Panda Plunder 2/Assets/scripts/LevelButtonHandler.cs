@@ -5,6 +5,10 @@ using UnityEngine.UI;
 
 // OLD Game 1
 
+/*
+ *  Handles the level buttons in Game 1, such as stars and score displayed and whether the level is available for play.
+ */
+
 public class LevelButtonHandler : MonoBehaviour
 {
 

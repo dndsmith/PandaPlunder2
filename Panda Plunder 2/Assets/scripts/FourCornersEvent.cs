@@ -3,6 +3,10 @@ using System.Collections;
 
 // Game 2
 
+/*
+*  Event data sent to a FourCornersInteractable.
+*/
+
 public class FourCornersEvent : InteractableEvent
 {
     public bool start;

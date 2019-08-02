@@ -3,6 +3,11 @@ using UnityEngine.SceneManagement;
 
 // Game 2
 
+/*
+ *  Activates a sphere which acts like a "finish line" for the player to walk through to get back to
+ *  the main menu after all activities in a level are complete. Hences, it ends the level.
+ */
+
 // Better design would be to change ActivityCompleted to an event listener for the event ActivityController.ActivityStopped
 // Also, change it so that the LoadScene back to MainScreen is in a separate function (for the potential pause menu)
 

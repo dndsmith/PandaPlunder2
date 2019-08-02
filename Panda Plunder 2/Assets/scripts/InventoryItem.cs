@@ -3,7 +3,12 @@ using System.Collections;
 
 // Game 2
 
-// This is a workaround for storing inventory items in a stack when their gameobjects get destroyed
+/*
+ *  Represents an item that can be stored in an inventory (e.g. gems).
+ *  Items have a type and an icon associated with them.
+ *  Type should be formatted as <modifier_1>...<modifier_n><tag>
+ *  --> E.g. greengem is of the form <modifier_1><tag>
+ */
 
 public class InventoryItem
 {

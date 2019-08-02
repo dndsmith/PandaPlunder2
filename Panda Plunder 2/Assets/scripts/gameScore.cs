@@ -5,6 +5,11 @@ using UnityEngine.UI;
 
 // OLD Game 1 but used in Game 2
 
+/*
+ *  Represents the player's score for the level they are playing.
+ *  Has logic to display the score on the screen.
+ */
+
 public class GameScore : MonoBehaviour
 {
     public int score = 0;

@@ -7,11 +7,11 @@ using UnityEngine;
 public class FourCornersHighBeams : MonoBehaviour
 {
     public string color;
-    private FourCornersController FCC;
+    private FourCornersInteractable FCC;
 
     private void Start()
     {
-        FCC = GetComponentInParent<FourCornersController>();
+        FCC = GetComponentInParent<FourCornersInteractable>();
     }
 
     private void OnTriggerEnter(Collider other)

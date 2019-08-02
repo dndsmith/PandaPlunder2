@@ -4,15 +4,25 @@ using UnityEngine.UI;
 
 // Game 2
 
+/*
+ *  Makes a 2D GameObject draggable.
+ *  - If it is within the boundary of a Drop Zone,
+ *    then it will remain there until dragged to another drop zone.
+ *  - If it is dragged from its Drop Zone to an area without a Drop Zone
+ *    it will return to the Drop Zone it was dragged from.
+ *  - If an Item Stack is dragged with a left-click, the entire stack is dragged.
+ *  - If an Item Stack is dragged with a right-click, one item from the stack is dragged.
+ */
+
 [RequireComponent(typeof(BoxCollider2D))]
 public class DragItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
 {
     public GameObject instantiationPrefab;
     private RectTransform[] RT;
     private DropZone parentHomeBase;
-    public DropZone homeBase; // fix accessibility x3
-    public bool inDrag;
-    public bool inBoundsOfDropZone;
+    private DropZone homeBase;
+    private bool inDrag;
+    private bool inBoundsOfDropZone;
 
     private void Awake()
     {

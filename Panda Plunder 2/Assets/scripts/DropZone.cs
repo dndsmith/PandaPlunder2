@@ -4,6 +4,12 @@ using UnityEngine.EventSystems;
 
 // Game 2
 
+/*
+ *  Makes a 2D GameObject a drop zone for Drag Items to reside in.
+ *  - Ensures 0 or 1 Drag Items can reside in it at a time.
+ *  - An Item Stack with > 1 items is considered 1 Drag Item.
+ */
+
 public class DropZone : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
     public DragItem residentItem = null; //fix accessibility

@@ -4,6 +4,10 @@ using UnityEngine;
 
 // OLD Game 1
 
+/*
+ *  Caused the boss question door to glow in Game 1.
+ */
+
 // TODO: remove Animator
 
 public class MakeGlow : MonoBehaviour

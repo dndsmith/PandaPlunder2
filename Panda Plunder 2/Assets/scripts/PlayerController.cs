@@ -4,15 +4,12 @@ using UnityEngine;
 
 // Game 2
 
-// AN EVENT SOURCE
-// A character controller
-
-/* * * TODO
- * 1. OnTriggerEnter handle cases of weird Interactable component placement
- * 2. Switch from List to Dictionary for interactables (faster lookup)
- * 3. Weird things resulting from only being able to interact with one Interactable at a time and colliding with multiple interactables and ugh (need a queue?) (no, I need a moment *crunch*)
- * 4. Be able to handle more cases of interactable objects
- * */
+/*
+ *  Controls player actions and interactions not related to moving around.
+ *  - Logic for interacting with interactable objects.
+ *  - Logic to switch between dances.
+ *  - Logic to change combo levels.
+ */
 
 public class PlayerController : MonoBehaviour
 {

@@ -4,6 +4,10 @@ using UnityEngine;
 
 // OLD Game 1
 
+/*
+ *  Controlled the glow and disappearance of the boss question door in the Game 1.
+ */
+
 public class ExitDoor : MonoBehaviour {
 
 

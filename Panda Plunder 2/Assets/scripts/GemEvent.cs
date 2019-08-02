@@ -3,8 +3,9 @@ using System.Collections;
 
 // Game 2
 
-// Event object for gems
-// TODO: overload equals operator
+/*
+*  Event data sent to a FourCornersInteractable.
+*/
 
 public class GemEvent : InteractableEvent
 {

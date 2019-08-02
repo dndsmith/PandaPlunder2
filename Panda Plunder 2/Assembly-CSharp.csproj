@@ -100,8 +100,8 @@
     <Compile Include="Assets\dependencies\Pathfinding\Scripts\WaypointPathfinder.cs" />
     <Compile Include="Assets\emitFlash.cs" />
     <Compile Include="Assets\Enabler.cs" />
-    <Compile Include="Assets\FourCornersController.cs" />
     <Compile Include="Assets\FourCornersHighBeams.cs" />
+    <Compile Include="Assets\FourCornersInteractable.cs" />
     <Compile Include="Assets\GemCarryInteractable.cs" />
     <Compile Include="Assets\InvisiibleScript.cs" />
     <Compile Include="Assets\LoginHandler.cs" />

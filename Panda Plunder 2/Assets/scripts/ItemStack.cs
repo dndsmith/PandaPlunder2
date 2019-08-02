@@ -4,6 +4,13 @@ using System.Collections.Generic;
 
 // Game 2
 
+/*
+ *  Represents a stack of same-type inventory items.
+ *  
+ *  It is attached to a prefab that also functions as a draggable item, so when items are
+ *  dragged between inventories, this is what gets dragged.
+ */
+
 public class ItemStack : MonoBehaviour
 {
     private Image itemImage;

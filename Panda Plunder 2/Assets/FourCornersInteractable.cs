@@ -6,7 +6,7 @@ using UnityEngine;
 
 // Until I can find a way to fix the lights, they are commented out
 
-public class FourCornersController : Interactable
+public class FourCornersInteractable : Interactable
 {
     // Lights are in order Red, Yellow, Green, Blue
     // ................(forward, left, right, backward)

@@ -4,6 +4,11 @@ using UnityEngine;
 
 // OLD Game 1 but used in Game 2
 
+/*
+ *  Follows a given GameObject's x and z coordinates.
+ *  Used by the game camera.
+ */
+
 public class followObject : MonoBehaviour {
 
     public GameObject leader;

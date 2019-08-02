@@ -22,7 +22,7 @@ public class questionInteraction : interaction {
     public Text questionNumber;
     public GameScore GS;
 
-    public FourCornersController FCC;
+    public FourCornersInteractable FCC;
     public StartFourCorners startFourCorners;
 
     public int correct;

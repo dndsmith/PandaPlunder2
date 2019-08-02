@@ -5,6 +5,11 @@ using UnityEngine.SceneManagement;
 
 // OLD Game 1
 
+/*
+ *  Loads next level/scene after a level is completed. If not resetting, writes the player's data
+ *  to their save file.
+ */
+
 public class EndGame : MonoBehaviour {
 
     public wipeControl WP;

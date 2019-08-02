@@ -5,8 +5,20 @@ using UnityEngine.UI;
 
 // Game 2
 
-// A base class for listeners of events from characters
-// @invariant - only ONE Interactable component per GameObject. None on children
+/* 
+ * Represents an object that the player (i.e. raccoon) can interact with.
+ * Specific objects with which the player can interact must implement this class.
+ * 
+ * Another way of thinking about this class is that it is an event listener for events
+ * from the player, where the player is an event source. It's event-driven programming.
+ * 
+ * To implement a new interactable, one must do 3 things:
+ * 1) Create a class that implements Interactable
+ * 2) Create a separate class that implements InteractableEvent
+ * 3) Add logic in PlayerController for how the player interacts with it
+ * 
+ * @invariant - only ONE Interactable component per GameObject.
+ */
 
 public abstract class Interactable : MonoBehaviour
 {

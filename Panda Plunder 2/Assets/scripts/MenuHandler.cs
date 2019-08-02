@@ -5,6 +5,10 @@ using UnityEngine.UI;
 
 // OLD Game 1
 
+/*
+ *  Handled button presses and navigation within the Game 1 LevelSelect menu.
+ */
+
 public class MenuHandler : MonoBehaviour {
 
     public gameData DB;

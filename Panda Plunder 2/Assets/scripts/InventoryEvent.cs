@@ -2,7 +2,7 @@
 using System.Collections;
 
 // Game 2
-// NOT USED
+// NOT USED because the inventory is not an interactable
 
 public class InventoryEvent : InteractableEvent
 {

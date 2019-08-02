@@ -7,13 +7,13 @@ using UnityEngine;
 
 public class StartFourCorners : MonoBehaviour
 {
-    FourCornersController FCC;
+    FourCornersInteractable FCC;
     BoxCollider[] colliders;
     public bool useTriggerFromCollider = false;
 
     private void Start()
     {
-        FCC = GetComponentInChildren<FourCornersController>();
+        FCC = GetComponentInChildren<FourCornersInteractable>();
         colliders = GetComponentsInChildren<BoxCollider>();
         int size = colliders.Length;
         int i = (useTriggerFromCollider) ? 1 : 0;

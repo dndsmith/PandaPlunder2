@@ -4,18 +4,23 @@ using System.Collections;
 
 // Game 2
 
+/*
+ *  Represents an activity involving flash cards and the four corners pad.
+ *  Contains extra logic for the correct answer and the player's input on the four corners pad.
+ */
+
 public class FlashCardActivity : ActivityController
 {
     public string correctColorAnswer;
     public moveScore questionMover;
     public Sprite questionSlide;
 
-    private FourCornersController FCC;
+    private FourCornersInteractable FCC;
     private int scoreToAdd = 0;
 
     void Start()
     {
-        FCC = GetComponentInChildren<FourCornersController>();
+        FCC = GetComponentInChildren<FourCornersInteractable>();
         questionMover.toView = false;
     }
 

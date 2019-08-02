@@ -5,6 +5,10 @@ using System;
 // Game 2
 // NOT USED
 
+/*
+ *  Handled a defunct loading screen, waiting to let the player play the level until the loading bar was complete.
+ */
+
 public class LoadingMenuHandler : MainMenuHandler
 {
     LoadingBar loadingBar;

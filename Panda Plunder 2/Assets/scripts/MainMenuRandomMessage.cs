@@ -3,6 +3,10 @@ using UnityEngine.UI;
 
 // Game 2
 
+/*
+ *  Generates a random message for the main menu of Game 2.
+ */
+
 public class MainMenuRandomMessage : MonoBehaviour
 {
     Text message;

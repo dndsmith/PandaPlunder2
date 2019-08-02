@@ -6,6 +6,11 @@ using System.Collections;
 // Game 2
 // NOT USED
 
+/*
+ *  Represents a loading bar made up of discrete circles that indicate the progress of loading.
+ *  It is merely cosmetic.
+ */
+
 public class LoadingBar : MonoBehaviour
 {
     public event EventHandler<EventArgs> Loaded;

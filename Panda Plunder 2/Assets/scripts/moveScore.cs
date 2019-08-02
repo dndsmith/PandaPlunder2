@@ -4,6 +4,11 @@ using UnityEngine;
 
 // OLD Game 1 but used in Game 2
 
+/*
+ *  Moves a 2D GameObject between 2 points.
+ *  The GameObject rests at one of the 2 points depending on a boolean condition.
+ */
+
 public class moveScore : MonoBehaviour {
 
 

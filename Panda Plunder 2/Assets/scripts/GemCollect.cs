@@ -3,7 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 
 // Game 2
-// NOT USED
+// NOT USED BUT CAN BE
+
+/*
+ *  Destroys a gem upon contact and adds points to the player's score.
+ */
 
 public class GemCollect : MonoBehaviour
 {

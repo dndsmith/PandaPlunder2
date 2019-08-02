@@ -3,6 +3,10 @@ using System.Collections.Generic;
 
 // Game 2
 
+/*
+ *  Displays a message when any of a given collection of chests are first opened.
+ */
+
 public class MessageOnChestOpen : MonoBehaviour
 {
     public List<ChestInteractable> chestsToSendMessageOn;

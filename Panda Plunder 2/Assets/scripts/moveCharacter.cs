@@ -4,6 +4,11 @@ using UnityEngine;
 
 // OLD Game 1 but used in Game 2
 
+/*
+ *  Handles the movement of the player character (i.e. raccoon).
+ *  Also handles animations associated with movement.
+ */
+
 public class moveCharacter : MonoBehaviour
 {
 

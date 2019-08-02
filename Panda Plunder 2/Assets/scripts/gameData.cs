@@ -6,6 +6,12 @@ using System.IO;
 
 // OLD Game 1
 
+/*
+ *  Represented the "database" in Game 1.
+ *  Can load a scene, load player save data, and write player data to the player's save file.
+ *  NOTE: the player save files comprised the database
+ */
+
 public class gameData : MonoBehaviour {
 
     private static bool created = false;
