@@ -4,6 +4,10 @@ using System.Collections;
 
 // Game 2
 
+/*
+ *  Can be thought of as a reference/pointer to a Variable.
+ */
+
 public class VariableHolder : MonoBehaviour
 {
     private Variable theVariable;

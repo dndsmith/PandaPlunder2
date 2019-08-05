@@ -4,6 +4,11 @@ using UnityEngine;
 
 // OLD Game 1
 
+/*
+ *  I think this handled moving the black screen out of the way at the beginning of a level in Game 1.
+ *  I think it also played the start animation and sound for the raccoon.
+ */
+
 public class StartGame : MonoBehaviour {
 
 

@@ -4,6 +4,19 @@ using UnityEngine;
 
 // OLD Game 1
 
+/*
+ *  NOTE: there are 4 classes in this file
+ *  Class 1 - PlayerInfo
+ *      - Holds personal info (name, password)
+ *      - Holds level progress and question responses
+ *  Class 2 - AnswerTable
+ *      - Literally just has a string of characters with the correct answers. I don't know why this is a class.
+ *  Class 3 - QuestionData
+ *      - Holds info about a question: index num, correct answer, player consecutive answers
+ *  Class 4 - LevelData
+ *      - Holds info about a level: level num, highest score earned, highest num stars earned, whether it's been played
+ */
+
 [System.Serializable]
 public class PlayerInfo
 {

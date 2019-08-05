@@ -5,9 +5,12 @@ using UnityEngine;
 
 // Game 2
 
-// EVENT LISTENER
-// need a design pattern (factory?) so can have only one variable instead of two for the activity controller type
-// ---> current solution of having both an assignment activity and a command activity is a workaround
+/*
+ *  Starts and stops an activity when the player steps on the stop pad.
+ *  From prior conversations, needs a redo into two separate units.
+ *  
+ *  Might should be renamed.
+ */
 
 public class StopPadController : Interactable
 {

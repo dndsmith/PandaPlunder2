@@ -4,10 +4,10 @@ using UnityEngine;
 
 // Game 2
 
-/* * * TODO
- * 1. Raise height of gem at angle relative to pick-up and then move it to front of raccoon (IEnumerator)
- * 2. Automate assigning the color value for the gem rather than depending on the Unity dev
- * */
+/* 
+ *  Controls interactions between the player and a gem.
+ *  Contains logic to physically pick up or drop the gem, but currently the PlayerController opts to stash the gem instead.
+ */
 
 public class GemCarryInteractable : Interactable
 {

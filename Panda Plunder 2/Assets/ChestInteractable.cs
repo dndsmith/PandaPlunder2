@@ -6,9 +6,14 @@ using System.Diagnostics;
 
 // Game 2
 
-// EVENT LISTENER
-// @ requires prompt Image to not be null
-// some code is leftover from when gems were literally being dropped into the chest
+/*
+ *  Handles interactions between the player and the chest.
+ *  Opens/Closes the chest, displays the assignment menu and the variables menu
+ * 
+ *  @ requires prompt Image to not be null
+ *  NOTE: some code is leftover from when gems were literally being dropped into the chest
+ *  Looking back at this, it's easy to see the code got convoluted over time and could probably be simplified.
+ */
 
 public class ChestInteractable : Interactable
 {
@@ -23,7 +28,8 @@ public class ChestInteractable : Interactable
     private Variable chestVariable;
     private AssignmentActivity assignmentActivity;
 
-    // vars related to phsical gems in chest --- OLD WAY OF ASSIGNING CHEST
+    // OLD PHYSICAL WAY OF ASSIGNING CHEST
+    // vars related to phsical gems in chest
     public string [] gemColors;
     public int [] numGemsPerColor;
     private Dictionary<string, int> chestContents = new Dictionary<string, int>();

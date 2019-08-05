@@ -4,6 +4,10 @@ using UnityEngine;
 
 // OLD Game 1
 
+/*
+ *  ?
+ */
+
 public class QDoorControl : MonoBehaviour {
 
     public Material glowMat;

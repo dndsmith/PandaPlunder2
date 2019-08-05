@@ -5,7 +5,12 @@ using UnityEngine;
 using UnityEngine.UI;
 
 // Game 2
-// Designed this with the countdown being a one-time event...gonna have to change that
+
+/*
+ *  Contains logic to control a 3, 2, 1, Go! countdown in the middle of the screen.
+ * 
+ *  Designed this with the countdown being a one-time event...gonna have to change that
+ */
 
 public class CountdownInteractable : Interactable
 {

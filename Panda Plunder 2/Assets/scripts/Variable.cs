@@ -3,6 +3,12 @@ using System.Collections.Generic;
 
 // Game 2
 
+/*
+ *  Represents a variable with operations Assign and GetValue.
+ *  Currently only InventoryItems as values. This could be generalized.
+ *  Currently does not check for same type among all InventoryItems when assigned.
+ */
+
 public class Variable : MonoBehaviour
 {
     // assign name and icon in Inspector

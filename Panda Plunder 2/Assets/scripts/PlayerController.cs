@@ -53,7 +53,7 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
-        // // INTERACTIONS USING E button
+        // // INTERACTIONS
         if (Input.GetKeyDown(interactKey))
         {
             if(currentInteractable != null)

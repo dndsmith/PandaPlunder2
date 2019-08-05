@@ -6,6 +6,11 @@ using UnityEngine.UI;
 
 // OLD Game 1
 
+/*
+ *  I assume this saved the player's information to file when logging in or choosing a level?
+ *  Not sure
+ */
+
 public class createSceneHandler : MonoBehaviour {
 
     public gameData DB;

@@ -3,6 +3,10 @@ using System.Collections.Generic;
 
 // Game 2
 
+/*
+ *  Controls the menu which displays the list of available variables in an activity.
+ */
+
 public class VariablesMenu : MonoBehaviour
 {
     public GameObject dropZonePrefab;

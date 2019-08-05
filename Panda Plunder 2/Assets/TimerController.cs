@@ -6,12 +6,12 @@ using UnityEngine.UI;
 
 // Game 2
 
-// EVENT SOURCE AND LISTENER
-
-// NEED a better name, because this is implements Interactable
-// FIX logic in ReceiveEvent
-// STYLE magic number 60 in IEnumerator
-// Use findobjectbyType for gameScore?
+/*
+ *  Controls the timer in the top right of the screen.
+ *  Functions exactly how you'd expect a timer to work: set, start, stop, reset, display, hide, countdown.
+ *  
+ *  Might should be a Singleton. May not have to implement Interactable, but it works.
+ */
 
 public class TimerController : Interactable
 {

@@ -5,6 +5,10 @@ using UnityEngine.UI;
 
 // OLD Game 1
 
+/*
+ *  ?
+ */
+
 public class storySlides : MonoBehaviour {
 
     public List<Texture2D> images;

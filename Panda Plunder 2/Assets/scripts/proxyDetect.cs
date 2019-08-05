@@ -3,7 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 
 // OLD Game 1
-// NEVER USED?
+
+/*
+ *  I assume this was used on the Panda enemies to trigger them chasing the player when
+ *  the player walked in proximity to the Panda.
+ */
 
 public class proxyDetect : MonoBehaviour {
 

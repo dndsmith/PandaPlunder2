@@ -4,6 +4,10 @@ using UnityEngine;
 
 // OLD Game 1
 
+/*
+ *  I think this controls the black screen that clears at the start of a level and covers at the end of a level.
+ */
+
 public class wipeControl : MonoBehaviour {
 
     public int waitTimer;

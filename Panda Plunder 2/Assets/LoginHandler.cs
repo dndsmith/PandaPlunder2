@@ -6,6 +6,10 @@ using UnityEngine.UI;
 
 // OLD Game 1
 
+/*
+ *  Looks like this handled logging in the player and load their save data from file.
+ */
+
 public class LoginHandler : MonoBehaviour {
 
     public gameData DB;

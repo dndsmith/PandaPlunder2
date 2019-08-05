@@ -4,6 +4,10 @@ using UnityEngine;
 
 // OLD Game 1
 
+/*
+ *  Don't know what this does
+ */
+
 public class startLogoControl : MonoBehaviour {
 
     public moveScore MS;

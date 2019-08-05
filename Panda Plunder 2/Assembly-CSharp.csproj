@@ -103,7 +103,6 @@
     <Compile Include="Assets\FourCornersHighBeams.cs" />
     <Compile Include="Assets\FourCornersInteractable.cs" />
     <Compile Include="Assets\GemCarryInteractable.cs" />
-    <Compile Include="Assets\InvisiibleScript.cs" />
     <Compile Include="Assets\LoginHandler.cs" />
     <Compile Include="Assets\MainMenuHandler.cs" />
     <Compile Include="Assets\MessagePanelController.cs" />

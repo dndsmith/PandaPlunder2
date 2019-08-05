@@ -4,6 +4,12 @@ using System;
 
 // Game 2
 
+/*
+ *  Controls the image that displays a program card to the player.
+ *  That is, when the player interacts with the program card, this "viewer" moves the card
+ *  into the middle of the screen so the player can read it.
+ */
+
 public class ProgramCardViewer : MonoBehaviour
 {
     public moveCharacter MC;

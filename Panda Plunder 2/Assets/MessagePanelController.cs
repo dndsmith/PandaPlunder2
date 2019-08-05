@@ -5,6 +5,14 @@ using UnityEngine.UI;
 
 // Game 2
 
+/*
+ *  Controls the message panel that pops up at the bottom of the screen.
+ *  Has logic to display a message, hide a message, clear the text of the message,
+ *  and display a message for a set period of time.
+ *  
+ *  FIXME: Does not handle multiple simultaneous calls well.
+ */
+
 public class MessagePanelController : MonoBehaviour
 {
     // Singleton

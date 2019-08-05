@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 // Game 2
-// NOT USED
+// NOT USED, Could probably delete
 
 public class StartFourCorners : MonoBehaviour
 {

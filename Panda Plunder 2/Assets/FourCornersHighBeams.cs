@@ -4,6 +4,11 @@ using UnityEngine;
 
 // Game 2
 
+/*
+ *  Used by the box colliders in the Four Corners pad to indicate color the player chose.
+ *  Formerly, this was indicated with lights; but not anymore since the lights look bad in the game.
+ */
+
 public class FourCornersHighBeams : MonoBehaviour
 {
     public string color;

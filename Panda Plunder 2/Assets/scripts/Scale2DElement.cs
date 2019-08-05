@@ -4,6 +4,10 @@ using System.Collections;
 // Game 2
 // NOT USED
 
+/*
+ *  Don't bother, but at the time I was trying to scale 2D elements up or down.
+ */
+
 [RequireComponent(typeof(RectTransform))]
 public class Scale2DElement : MonoBehaviour
 {

@@ -3,6 +3,10 @@ using System.Collections;
 
 // Game 2
 
+/*
+*  Event data sent to a StopPadInteractable.
+*/
+
 public class StopPadEvent : InteractableEvent
 {
     public StopPadEvent()

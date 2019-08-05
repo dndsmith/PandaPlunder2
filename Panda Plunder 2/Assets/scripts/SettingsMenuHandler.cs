@@ -4,6 +4,11 @@ using UnityEngine.UI;
 // Game 2
 // NOT FINISHED
 
+/*
+ *  Handles interactions with the settings menu.
+ *  TODO: If a setting is changed, it handles it by writing that change to the player's save file.
+ */
+
 public class SettingsMenuHandler : MainMenuHandler
 {
     // index 0: movement dropdown

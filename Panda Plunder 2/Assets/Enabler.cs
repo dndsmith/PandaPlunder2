@@ -4,6 +4,11 @@ using UnityEngine;
 
 // Game 2
 
+/*
+ *  Sets a GameObject to active (enable) or inactive (disable).
+ *  Contains logic to enable the GameObject when the assignment menu is opened.
+ */
+
 public class Enabler : MonoBehaviour
 {
     public bool enableAtStart;

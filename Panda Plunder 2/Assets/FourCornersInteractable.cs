@@ -4,7 +4,12 @@ using UnityEngine;
 
 // Game 2
 
-// Until I can find a way to fix the lights, they are commented out
+/*
+ *  Controls interactions between the player and the Four Corners pad.
+ *  Contains logic to start the Four Corners pad and turn its lights on/off, and 
+ *  
+ *  Until I can find a way to fix the lights, they are commented out
+ */
 
 public class FourCornersInteractable : Interactable
 {

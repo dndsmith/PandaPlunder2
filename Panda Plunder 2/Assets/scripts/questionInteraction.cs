@@ -5,6 +5,12 @@ using UnityEngine.UI;
 
 // OLD Game 1
 
+/*
+ *  Used to control the player's interactions with the green question marks.
+ *  Would display the question slide into the middle of the screen, play the sound effects,
+ *  and send the player's response to the questionControl object.
+ */
+
 public class questionInteraction : interaction {
 
 

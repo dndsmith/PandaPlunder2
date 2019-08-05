@@ -3,6 +3,10 @@ using System.Collections;
 
 // Game 2
 
+/*
+*  Event data sent to a ProgramCardInteractable.
+*/
+
 public class ProgramCardEvent : InteractableEvent
 {
     public bool viewCard;

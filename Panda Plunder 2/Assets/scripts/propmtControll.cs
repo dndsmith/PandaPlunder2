@@ -5,6 +5,10 @@ using UnityEngine.UI;
 
 // OLD Game 1
 
+/*
+ *  Old method of interacting with things.
+ */
+
 public class propmtControll : MonoBehaviour {
 
 

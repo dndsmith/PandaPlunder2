@@ -4,6 +4,12 @@ using UnityEngine;
 
 // OLD Game 1
 
+/*
+ *  Used to control when the boss question door would glow after all other questions were answered.
+ *  Also opened the boss door.
+ *  I assume it also recorded the player's answers to the questions.
+ */
+
 public class questionControl : MonoBehaviour {
 
     public GameObject BossQuestion;

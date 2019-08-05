@@ -3,6 +3,15 @@ using UnityEngine.SceneManagement;
 
 // Game 2
 
+/*
+ *  Handles interactions with the Main Screen menu.
+ *  Loads scenes and has a function to handle all manner of actions based on developer-defined syntax (oh boy).
+ *  That function is called when a user clicks a button on the menu.
+ *  
+ *  IDEA: Intention would be to make an abstract class MenuHandler (name currently taken)
+ *  and have all the menu handlers implement it.
+ */
+
 public class MainMenuHandler : MonoBehaviour
 {
     // FIXME: parse string for commands. It is the event data

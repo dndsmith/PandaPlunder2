@@ -5,7 +5,10 @@ using UnityEngine.UI;
 
 // Game 2
 
-// TRY LOWERING LIGHTS?
+/*
+ *  Controls interactions between the player and the program card.
+ *  All it really does is call the program card viewer to display or hide the program card.
+ */
 
 public class ProgramCardInteractable : Interactable
 {

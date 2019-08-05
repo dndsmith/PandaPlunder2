@@ -5,6 +5,10 @@ using UnityEngine;
 // Game 2
 // NOT USED
 
+/*
+ *  Formerly would delete an InventoryItem when dragged onto the trash can.
+ */
+
 public class TrashCan : MonoBehaviour
 {
     DropZone theZone;

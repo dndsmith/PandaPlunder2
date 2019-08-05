@@ -3,6 +3,10 @@ using System.Collections;
 
 // Game 2
 
+/*
+*  Event data sent to a TimerController.
+*/
+
 public class TimerEvent : InteractableEvent
 {
     public bool set;
