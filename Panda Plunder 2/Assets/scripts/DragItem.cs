@@ -20,7 +20,7 @@ public class DragItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDrag
     public GameObject instantiationPrefab;
     private RectTransform[] RT;
     private DropZone parentHomeBase;
-    private DropZone homeBase;
+    public DropZone homeBase; // this must stay public
     private bool inDrag;
     private bool inBoundsOfDropZone;
 
@@ -99,7 +99,7 @@ public class DragItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDrag
         this.GetComponent<CanvasGroup>().blocksRaycasts = true;
     }
 
-    public void InDropZone(bool b)
+    public void InsideDropZone(bool b)
     {
         inBoundsOfDropZone = b;
     }
@@ -116,7 +116,7 @@ public class DragItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDrag
             if (homeBase != null) homeBase.SetResidentItem(null);
             SetHomeBase(DZ);
             homeBase.SetResidentItem(this);
-            InDropZone(false);
+            InsideDropZone(false);
         }
     }
 

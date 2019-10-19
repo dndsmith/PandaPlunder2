@@ -35,7 +35,7 @@ public class DropZone : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
         DragItem d = eventData.pointerDrag.GetComponent<DragItem>();
         if (d != null && residentItem == null)
         {
-            d.InDropZone(true);
+            d.InsideDropZone(true);
         }
         else if(d != null && SameType(d.gameObject.GetComponent<ItemStack>()))
         {
@@ -51,7 +51,7 @@ public class DropZone : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
         DragItem d = eventData.pointerDrag.GetComponent<DragItem>();
         if (d != null && residentItem == null)
         {
-            d.InDropZone(false);
+            d.InsideDropZone(false);
         }
     }
 
